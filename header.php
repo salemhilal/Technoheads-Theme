@@ -49,26 +49,33 @@
 
 <body <?php body_class(); ?>>
 
-<div id="page" class="hfeed site">
-  <header id="masthead" class="site-header" role="banner">
-    <hgroup>
-      <h1 class="site-title">
-        <a href="<?php echo home_url('/'); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display') ); ?>" rel="home">
-          <?php bloginfo('name'); ?>
-        </a>
-      </h1>
-      <h2 class="site-description">
-        <?php bloginfo('description'); ?>
-      </h2>
-    </hgroup>
-    <nav class="site-navigation main-navigation" role="navigation">
-      <h1 class="assistive-text"><?php _e('Menu', 'technoheads'); ?></h1>
-      <div class="assistive-text skip-link">
-        <a href="#content" title="<?php esc_attr_e('Scip to content', '_s'); ?>">
-          <?php _e('Skip to content', 'technoheads'); ?>
-        </a>
-      </div>
-      <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
-    </nav>
-  </header>
+<div id="page" class="hfeed site page">
+  <div class="row heading">
+    <div class="header column">
+      <header id="masthead" class="site-header" role="banner">
+        <hgroup>
+          <h1 class="site-title">
+            <!-- <a href="<?php echo home_url('/'); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display') ); ?>" rel="home"> -->
+              <!-- <?php bloginfo('name'); ?> -->
+              <div class="header_text">Techno<span class="heads">heads.</span></div> 
+            <!-- </a> -->
+          </h1>
+          <!-- <h2 class="site-description">
+            <?php bloginfo('description'); ?>
+          </h2> -->
+        </hgroup>
+        
+      </header>
+    </div>
+  </div>
+  <nav class="site-navigation main-navigation" role="navigation">
+    <h1 class="assistive-text"><?php _e('Menu', 'technoheads'); ?></h1>
+    <div class="assistive-text skip-link">
+      <a href="#content" title="<?php esc_attr_e('Scip to content', '_s'); ?>">
+        <?php _e('Skip to content', 'technoheads'); ?>
+      </a>
+    </div>
+    <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
+  </nav>
+
   <div id="main" class="site-main">
