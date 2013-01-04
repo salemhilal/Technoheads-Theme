@@ -31,7 +31,8 @@ html {
     -ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 }
 body {
-    background: #fff;
+  background: #fff;
+  font-family: sans-serif;
 }
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
     display: block;
@@ -96,18 +97,67 @@ a img {
  *------------------------------------*/
 body{
   background-color: #EFEFEF;
+  margin: 0;
+}
+#nav-above{
+  display: none;
+}
+#main{
+  background: none; /* TODO: Remove this when you remove .col backgrounds. */
+  padding:0;
+}
+#primary{
+  width: 100%;
+}
+
+/*------------------------------------ 
+ * Post Stuff
+ *------------------------------------*/
+ 
+article.post{
+  padding:10px;
+  border: 1px solid #333;
+  margin-bottom: 10px;
+}
+
+/* Heading */
+article.post header{
+  position: relative;
+}
+h1.entry-title{
+  font-family: 'bignoodletitlingoblique';
+  font-size: 4em;
+  margin: 0;
+}
+h1.entry-title a:visited, h1.entry-title a:active, h1.entry-title a{
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Meta */
+.entry-meta a .entry-date{
+  font-size: .9em;
+  position: absolute;
+  bottom: 13px;
+  right: 0px;
+  text-decoration: none;
+  font-style: italic;
+}
+.entry-meta a:visited .entry-date{
+  color:inherit;
 }
 
 
 /*------------------------------------ 
- * Header stuff
+ * Page Header stuff
  *------------------------------------*/
 .header{
   background-color: #222;
   text-align: right;
+  margin: 12px 0;
 }
 
-.header_text{
+.site-title{
   position: relative; 
   bottom: -33px;
   margin: 0;
@@ -116,6 +166,13 @@ body{
   font-family: 'bignoodletitlingregular';
   color: #EFEFEF;
   font-size: 4em;
+}
+.site-title h1{
+  margin:0;
+}
+
+.header_text{
+
 }
 
 .heads{
@@ -131,8 +188,7 @@ body{
   .col {
     border:0px solid rgba(0,0,0,0);
     background-color: #ccc;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     float:left;
     -webkit-box-sizing:border-box;
     -moz-box-sizing:border-box;
@@ -146,7 +202,7 @@ body{
   .page {
     margin: 0 auto;
     max-width: 95%;
-    overflow:hidden;
+    /*overflow:hidden;*/
     position:relative;
     max-width: 1000px;
   }
@@ -266,12 +322,11 @@ body{
     .header_padding {
       width:6.5%;
     }
-    .span_2,
-    .navigation,
-    .related_content {
+    .span_2 {
       width:15.0%;
     }
-    .span_3 {
+    .span_3,
+    .navigation {
       width:23.5%;
     }
     .span_4,
@@ -287,11 +342,11 @@ body{
     .span_7 {
       width:57.5%;
     }
-    .span_8,
-    .main_content {
+    .span_8 {
       width:66.0%;
     }
-    .span_9 {
+    .span_9,
+    .main_content {
       width:74.5%;
     }
     .span_10 {
