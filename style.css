@@ -65,7 +65,9 @@ a:active { /* Improves readability when focused and also mouse hovered in all br
 a img {
     border: 0;
 }
-
+h1{
+  font-weight: normal;
+}
 
 /*------------------------------------ 
  * Fonts
@@ -167,6 +169,12 @@ h1.entry-title a:visited, h1.entry-title a:active, h1.entry-title a{
   color: #EFEFEF;
   font-size: 4em;
 }
+
+.site-title a, .site-title a:visited, .site-title a:hover, .site-title a:active {
+    color: inherit;
+    text-decoration: none;
+}
+
 .site-title h1{
   margin:0;
 }
@@ -185,7 +193,7 @@ h1.entry-title a:visited, h1.entry-title a:active, h1.entry-title a{
  * Block Quotes
  *------------------------------------*/
 blockquote p:first-letter {
-  margin: -.3em 5px 5px;
+  margin: -.3em .1em -.1em;
   font-size: 3em;
   float: left;
   color: #9C504B;
@@ -400,8 +408,16 @@ blockquote p cite a {
 /* Firefox */
 @-moz-document url-prefix() {
 
+  /* Move the logo to be flush with the bottom of the header. */
   .site-title { 
     bottom: -26px;
   }
+
+  /* Make blockquotes pretty. */
+  blockquote p:first-letter {
+    margin: -.1em .1em -0em;
+  }
+
+
 
 }

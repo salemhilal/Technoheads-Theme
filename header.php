@@ -36,10 +36,10 @@
     }
 
   ?></title>
-  <meta name="description" content="Technoheads.org" />
+  <meta name="description" content=<?php bloginfo('description'); ?> />
   <meta name="viewport" content="width=device-width" />
 
-  <link rel="stylesheet" href="wp-content/themes/Technoheads-theme/css/normalize.min.css" />
+  <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/normalize.min.css" />
   <link rel="profile" href="http://gmpg.org/xfn/11" />
   <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
@@ -47,7 +47,7 @@
   <?php wp_head(); ?>
   <!-- End wordpress header -->
 
-  <script src="wp-content/themes/Technoheads-theme/js/vendor/modernizr-2.6.2.min.js"></script>
+  <script src="<?php bloginfo('stylesheet_directory'); ?>/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 
 <body <?php body_class(); ?>>
@@ -61,10 +61,10 @@
         <header id="masthead" class="site-header" role="banner">
           <hgroup>
             <div class="site-title">
-              <!-- <a href="<?php echo home_url('/'); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display') ); ?>" rel="home"> -->
+              <a href="<?php echo home_url('/'); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display') ); ?>" rel="home">
                 <!-- <?php bloginfo('name'); ?> -->
                 <h1>Techno<span class="heads">heads.</span></h1> 
-              <!-- </a> -->
+              </a>
             </div>
             <!-- <h2 class="site-description">
               <?php bloginfo('description'); ?>
