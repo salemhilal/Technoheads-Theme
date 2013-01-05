@@ -21,13 +21,16 @@ if (!function_exists('technoheads_setup' )):
 
     load_theme_textdomain('shape', get_template_directory() . '/languages');
 
+    //Theme support
     add_theme_support('automatic-feed-links');
     add_theme_support('post-formats', array('aside'));
+    add_theme_support( 'post-thumbnails' ); //For post featured images. 
 
     register_nav_menus( array(
       'primary' => __('Primary Menu', 'technoheads')
     ));
   }
+  
 endif;
 add_action('after_setup_theme', 'technoheads_setup');
 

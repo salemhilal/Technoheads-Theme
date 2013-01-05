@@ -9,7 +9,7 @@ Version:    0.0.1
 /*------------------------------------ 
  * Reset
  *------------------------------------*/
- 
+
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li,
@@ -179,6 +179,35 @@ h1.entry-title a:visited, h1.entry-title a:active, h1.entry-title a{
   color: #9C504B;
   /*color: #9C2824;*/
 }
+
+
+/*------------------------------------ 
+ * Block Quotes
+ *------------------------------------*/
+blockquote p:first-letter {
+  margin: -.3em 5px 5px;
+  font-size: 3em;
+  float: left;
+  color: #9C504B;
+}
+blockquote p {
+  color: #222;
+  font-family: bignoodletitlingregular;
+  font-size: 1.5em;
+}
+blockquote p cite {
+  float: right;
+  font-size: 1.1em;
+  font-family: bignoodletitlingoblique;
+}
+blockquote p cite:before {
+  content: "- ";
+}
+blockquote p cite a {
+  color: #9C504B;
+  text-decoration:  none;
+}
+
 
 /*------------------------------------ 
  * Grid (Courtesy of Gridpak)
@@ -362,3 +391,17 @@ h1.entry-title a:visited, h1.entry-title a:active, h1.entry-title a{
       width:100%;
     }
   }
+
+
+/*------------------------------------ 
+ * Browser-specific fixes. Ugh.
+ *------------------------------------*/
+
+/* Firefox */
+@-moz-document url-prefix() {
+
+  .site-title { 
+    bottom: -26px;
+  }
+
+}
