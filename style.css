@@ -124,7 +124,7 @@ article.post{
      -moz-border-radius: 2px;
           border-radius: 2px;
   background-color: white;
-  padding: 10px;
+  padding: 15px 15px 20px;
 }
 article.post:before,
 article.post:after {
@@ -135,24 +135,24 @@ article.post:after {
   width:80%;
   height:20%;
   -webkit-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
-  -moz-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
-  box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+     -moz-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+          box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
 
 }
 article.post:before{
   left:10px;
   -webkit-transform:rotate(-2deg);
-  -moz-transform:rotate(-2deg);
-  -o-transform:rotate(-2deg);
-  transform:rotate(-2deg);
+     -moz-transform:rotate(-2deg);
+       -o-transform:rotate(-2deg);
+          transform:rotate(-2deg);
 }
 article.post:after{
   right:10px;
   left:auto;
   -webkit-transform:rotate(2deg);
-  -moz-transform:rotate(2deg);
-  -o-transform:rotate(2deg);
-  transform:rotate(2deg);
+     -moz-transform:rotate(2deg);
+       -o-transform:rotate(2deg);
+          transform:rotate(2deg);
  }
 
 /* Featured image */
@@ -167,6 +167,7 @@ article.post:after{
   position: relative;
   max-width: 100%;
   float: left;
+  margin-bottom:15px;
 }
 .featured-image:before {
   content: "";
@@ -175,9 +176,9 @@ article.post:after{
   bottom: 0;
   left: 0;
   right: 0;
-  box-shadow: inset 0 0 8px rgba(0,0,0,.6);
-  -moz-box-shadow: inset 0 0 8px rgba(0,0,0,.6);
-  -webkit-box-shadow: inset 0 0 8px rgba(0,0,0,.6);
+  -webkit-box-shadow: inset 0 0 20px rgba(0,0,0,.6);
+     -moz-box-shadow: inset 0 0 20px rgba(0,0,0,.6);
+          box-shadow: inset 0 0 20px rgba(0,0,0,.6);
 } 
 .featured-image img {
   float: left;
@@ -200,7 +201,7 @@ h1.entry-title a:visited, h1.entry-title a:active, h1.entry-title a{
 /* Content */
 
 /* Meta */
-.entry-meta a .entry-date{
+.entry-meta a .entry-date, .entry-meta a:visited .entry-date{
   font-size: .9em;
   padding: 0 10px;
   position: absolute;
@@ -208,9 +209,11 @@ h1.entry-title a:visited, h1.entry-title a:active, h1.entry-title a{
   right: 0px;
   text-decoration: none;
   font-style: italic;
+  color:#555555;
 }
-.entry-meta a:visited .entry-date{
-  color:#555;
+.entry-meta a:hover .entry-date{
+  color: #222222;
+  text-decoration: underline;
 }
 
 
@@ -218,39 +221,29 @@ h1.entry-title a:visited, h1.entry-title a:active, h1.entry-title a{
  * Page Header stuff
  *------------------------------------*/
 .header{
-  background-color: #222;
+  background-color: #222222;
   text-align: right;
   margin: 12px 0;
   overflow:hidden;
 }
-
 .site-title{
   position: relative; 
   bottom: -33px;
   margin: 0;
   padding: 0;
-  
   font-family: 'bignoodletitlingregular';
   color: #EFEFEF;
   font-size: 4em;
 }
-
 .site-title a, .site-title a:visited, .site-title a:hover, .site-title a:active {
   color: inherit;
   text-decoration: none;
 }
-
 .site-title h1{
   margin:0;
 }
-
-.header_text{
-
-}
-
 .heads{
   color: #9C504B;
-  /*color: #9C2824;*/
 }
 
 /*------------------------------------ 
@@ -272,12 +265,10 @@ h1.entry-title a:visited, h1.entry-title a:active, h1.entry-title a{
   display: block;
   width: 100%;
 }
-
 .menu li a:hover{
   background-color: #222;
   color: #EFEFEF;
 }
-
 .menu {
   font-family: bignoodletitlingregular;
   font-size: 2.4em;
@@ -310,188 +301,201 @@ blockquote p cite a {
   text-decoration:  none;
 }
 
+/*------------------------------------ 
+ * Search Page
+ *------------------------------------*/
+.search-header{
+  font-family: bignoodletitlingregular;
+  font-size: 3em;
+  margin: 10px 0;
+}
+.search-term{
+  font-family: bignoodletitlingoblique;
+  color: #9C504B;
+}
+
 
 /*------------------------------------ 
  * Grid (Courtesy of Gridpak)
  *------------------------------------*/
 
-  /* Reusable column setup */
+/* Reusable column setup */
+.col {
+  border:0px solid rgba(0,0,0,0);
+  margin-bottom: 10px;
+  float:left;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+  -moz-background-clip:padding-box !important;
+  -webkit-background-clip:padding-box !important;
+  background-clip:padding-box !important;
+}
+
+/* Page wrapper */
+.page {
+  margin: 0 auto;
+  max-width: 95%;
+  /*overflow:hidden;*/
+  position:relative;
+  max-width: 1000px;
+}
+
+
+/* 1. 4 Column Grid 0px - 479px 
+----------------------------------------------------------------------------- 
+
+Span 1:  23.5%
+Span 2:  49.0%
+Span 3:  74.5%
+Span 4:  100%
+
+----------------------------------------------------------------------------- */
+
+@media screen and (min-width: 0px) and (max-width: 479px) {
+  
   .col {
-    border:0px solid rgba(0,0,0,0);
-    margin-bottom: 10px;
-    float:left;
-    -webkit-box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    box-sizing:border-box;
-    -moz-background-clip:padding-box !important;
-    -webkit-background-clip:padding-box !important;
-    background-clip:padding-box !important;
+    margin-left:2%;
+    padding:0 1.5%;
   }
-
-  /* Page wrapper */
-  .page {
-    margin: 0 auto;
-    max-width: 95%;
-    /*overflow:hidden;*/
-    position:relative;
-    max-width: 1000px;
+  .row .col:first-child {
+    margin-left:0;
   }
-
-
-  /* 1. 4 Column Grid 0px - 479px 
-  ----------------------------------------------------------------------------- 
   
-  Span 1:  23.5%
-  Span 2:  49.0%
-  Span 3:  74.5%
-  Span 4:  100%
   
-  ----------------------------------------------------------------------------- */
-
-  @media screen and (min-width: 0px) and (max-width: 479px) {
-    
-    .col {
-      margin-left:2%;
-      padding:0 1.5%;
-    }
-    .row .col:first-child {
-      margin-left:0;
-    }
-    
-    
-    .span_1 {
-      width:23.5%;
-    }
-    .span_2 {
-      width:49.0%;
-    }
-    .span_3 {
-      width:74.5%;
-    }
-    .span_4 {
-      margin-left:0;
-      width:100%;
-    }
+  .span_1 {
+    width:23.5%;
   }
-
-  /* 2. 6 Column Grid 480px - 979px 
-  ----------------------------------------------------------------------------- 
-  
-  Span 1:  15.0%
-  Span 2:  32.0%
-  Span 3:  49.0%
-  Span 4:  66.0%
-  Span 5:  83.0%
-  Span 6:  100%
-  
-  ----------------------------------------------------------------------------- */
-
-  @media screen and (min-width: 480px) and (max-width: 979px) {
-    
-    .col {
-      margin-left:2%;
-      padding:0 1.5%;
-    }
-    .row .col:first-child {
-      margin-left:0;
-    }
-    
-    
-    .span_1 {
-      width:15.0%;
-    }
-    .span_2 {
-      width:32.0%;
-    }
-    .span_3 {
-      width:49.0%;
-    }
-    .span_4 {
-      width:66.0%;
-    }
-    .span_5 {
-      width:83.0%;
-    }
-    .span_6,
-    .header {
-      margin-left:0;
-      width:100%;
-    }
+  .span_2 {
+    width:49.0%;
   }
-
-  /* 3. 12 Column Grid 980px - 1198px 
-  ----------------------------------------------------------------------------- 
-  
-  Span 1:  6.5%
-  Span 2:  15.0%
-  Span 3:  23.5%
-  Span 4:  32.0%
-  Span 5:  40.5%
-  Span 6:  49.0%
-  Span 7:  57.5%
-  Span 8:  66.0%
-  Span 9:  74.5%
-  Span 10:  83.0%
-  Span 11:  91.5%
-  Span 12:  100%
-  
-  ----------------------------------------------------------------------------- */
-
-  @media screen and (min-width: 980px) {
-    
-    .col {
-      margin-left:2%;
-      padding:0 1.5%;
-    }
-    .row .col:first-child {
-      margin-left:0;
-    }
-    
-    
-    .span_1,
-    .header_padding {
-      width:6.5%;
-    }
-    .span_2 {
-      width:15.0%;
-    }
-    .span_3,
-    .navigation {
-      width:23.5%;
-    }
-    .span_4,
-    .media_block {
-      width:32.0%;
-    }
-    .span_5 {
-      width:40.5%;
-    }
-    .span_6 {
-      width:49.0%;
-    }
-    .span_7 {
-      width:57.5%;
-    }
-    .span_8 {
-      width:66.0%;
-    }
-    .span_9,
-    .main_content {
-      width:74.5%;
-    }
-    .span_10 {
-      width:83.0%;
-    }
-    .span_11 {
-      width:91.5%;
-    }
-    .span_12,
-    .header,
-    .footer {
-      margin-left:0;
-      width:100%;
-    }
+  .span_3 {
+    width:74.5%;
   }
+  .span_4 {
+    margin-left:0;
+    width:100%;
+  }
+}
+
+/* 2. 6 Column Grid 480px - 979px 
+----------------------------------------------------------------------------- 
+
+Span 1:  15.0%
+Span 2:  32.0%
+Span 3:  49.0%
+Span 4:  66.0%
+Span 5:  83.0%
+Span 6:  100%
+
+----------------------------------------------------------------------------- */
+
+@media screen and (min-width: 480px) and (max-width: 979px) {
+  
+  .col {
+    margin-left:2%;
+    padding:0 1.5%;
+  }
+  .row .col:first-child {
+    margin-left:0;
+  }
+  
+  
+  .span_1 {
+    width:15.0%;
+  }
+  .span_2 {
+    width:32.0%;
+  }
+  .span_3 {
+    width:49.0%;
+  }
+  .span_4 {
+    width:66.0%;
+  }
+  .span_5 {
+    width:83.0%;
+  }
+  .span_6,
+  .header {
+    margin-left:0;
+    width:100%;
+  }
+}
+
+/* 3. 12 Column Grid 980px - 1198px 
+----------------------------------------------------------------------------- 
+
+Span 1:  6.5%
+Span 2:  15.0%
+Span 3:  23.5%
+Span 4:  32.0%
+Span 5:  40.5%
+Span 6:  49.0%
+Span 7:  57.5%
+Span 8:  66.0%
+Span 9:  74.5%
+Span 10:  83.0%
+Span 11:  91.5%
+Span 12:  100%
+
+----------------------------------------------------------------------------- */
+
+@media screen and (min-width: 980px) {
+  
+  .col {
+    margin-left:2%;
+    padding:0 1.5%;
+  }
+  .row .col:first-child {
+    margin-left:0;
+  }
+  
+  
+  .span_1,
+  .header_padding {
+    width:6.5%;
+  }
+  .span_2 {
+    width:15.0%;
+  }
+  .span_3,
+  .navigation {
+    width:23.5%;
+  }
+  .span_4,
+  .media_block {
+    width:32.0%;
+  }
+  .span_5 {
+    width:40.5%;
+  }
+  .span_6 {
+    width:49.0%;
+  }
+  .span_7 {
+    width:57.5%;
+  }
+  .span_8 {
+    width:66.0%;
+  }
+  .span_9,
+  .main_content {
+    width:74.5%;
+  }
+  .span_10 {
+    width:83.0%;
+  }
+  .span_11 {
+    width:91.5%;
+  }
+  .span_12,
+  .header,
+  .footer {
+    margin-left:0;
+    width:100%;
+  }
+}
 
 
 /*------------------------------------ 
@@ -511,4 +515,9 @@ blockquote p cite a {
     margin: -.1em .1em -0em;
   }
 
+}
+
+/* IE 9 */
+.ie9 .site-title{
+  bottom: -26px;
 }
