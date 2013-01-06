@@ -117,10 +117,71 @@ body{
  *------------------------------------*/
  
 article.post{
-  padding:10px;
-  border: 1px solid #333;
-  margin-bottom: 10px;
+  position:relative;
+  margin-bottom: 25px;
+  border: 5px solid white;
+  -webkit-border-radius: 2px;
+     -moz-border-radius: 2px;
+          border-radius: 2px;
+  background-color: white;
+  padding: 10px;
 }
+article.post:before,
+article.post:after {
+  content:"";
+  position:absolute;
+  z-index:-1;
+  bottom:10px;
+  width:80%;
+  height:20%;
+  -webkit-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+  box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+
+}
+article.post:before{
+  left:10px;
+  -webkit-transform:rotate(-2deg);
+  -moz-transform:rotate(-2deg);
+  -o-transform:rotate(-2deg);
+  transform:rotate(-2deg);
+}
+article.post:after{
+  right:10px;
+  left:auto;
+  -webkit-transform:rotate(2deg);
+  -moz-transform:rotate(2deg);
+  -o-transform:rotate(2deg);
+  transform:rotate(2deg);
+ }
+
+/* Featured image */
+.attachment-post-thumbnail.wp-post-image{
+  width: 100%;
+  height: inherit;
+}
+.featured-image{
+  overflow: hidden;
+}
+.featured-image {
+  position: relative;
+  max-width: 100%;
+  float: left;
+}
+.featured-image:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: inset 0 0 8px rgba(0,0,0,.6);
+  -moz-box-shadow: inset 0 0 8px rgba(0,0,0,.6);
+  -webkit-box-shadow: inset 0 0 8px rgba(0,0,0,.6);
+} 
+.featured-image img {
+  float: left;
+} 
 
 /* Heading */
 article.post header{
@@ -136,9 +197,12 @@ h1.entry-title a:visited, h1.entry-title a:active, h1.entry-title a{
   text-decoration: none;
 }
 
+/* Content */
+
 /* Meta */
 .entry-meta a .entry-date{
   font-size: .9em;
+  padding: 0 10px;
   position: absolute;
   bottom: 13px;
   right: 0px;
@@ -146,7 +210,7 @@ h1.entry-title a:visited, h1.entry-title a:active, h1.entry-title a{
   font-style: italic;
 }
 .entry-meta a:visited .entry-date{
-  color:inherit;
+  color:#555;
 }
 
 
@@ -157,6 +221,7 @@ h1.entry-title a:visited, h1.entry-title a:active, h1.entry-title a{
   background-color: #222;
   text-align: right;
   margin: 12px 0;
+  overflow:hidden;
 }
 
 .site-title{
@@ -171,8 +236,8 @@ h1.entry-title a:visited, h1.entry-title a:active, h1.entry-title a{
 }
 
 .site-title a, .site-title a:visited, .site-title a:hover, .site-title a:active {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 .site-title h1{
@@ -188,6 +253,35 @@ h1.entry-title a:visited, h1.entry-title a:active, h1.entry-title a{
   /*color: #9C2824;*/
 }
 
+/*------------------------------------ 
+ * Side Navigation
+ *------------------------------------*/
+.navigation.col {
+  padding: 0;
+}
+.menu > ul {
+  padding: 0;
+  margin: 0;
+}
+.menu li a{
+  color: inherit;
+  text-decoration: none;
+  margin-bottom: 5px;
+  background: none;
+  color: #222;
+  display: block;
+  width: 100%;
+}
+
+.menu li a:hover{
+  background-color: #222;
+  color: #EFEFEF;
+}
+
+.menu {
+  font-family: bignoodletitlingregular;
+  font-size: 2.4em;
+}
 
 /*------------------------------------ 
  * Block Quotes
@@ -224,7 +318,6 @@ blockquote p cite a {
   /* Reusable column setup */
   .col {
     border:0px solid rgba(0,0,0,0);
-    background-color: #ccc;
     margin-bottom: 10px;
     float:left;
     -webkit-box-sizing:border-box;
@@ -417,7 +510,5 @@ blockquote p cite a {
   blockquote p:first-letter {
     margin: -.1em .1em -0em;
   }
-
-
 
 }

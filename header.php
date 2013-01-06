@@ -78,12 +78,6 @@
     <div class="row">
       <div class="navigation col">
         <nav class="site-navigation main-navigation" role="navigation">
-          <h1 class="assistive-text"><?php _e('Menu', 'technoheads'); ?></h1>
-          <div class="assistive-text skip-link">
-            <a href="#content" title="<?php esc_attr_e('Scip to content', '_s'); ?>">
-              <?php _e('Skip to content', 'technoheads'); ?>
-            </a>
-          </div>
           <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
         </nav>
       </div>

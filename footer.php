@@ -27,7 +27,7 @@
   
   <!-- Scripts -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="wp-content/themes/Technoheads-theme/js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
+  <script>(window.jQuery && window.$) || document.write('<script src="<?php bloginfo('stylesheet_directory'); ?>/js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
 
   <script src="<?php bloginfo('stylesheet_directory'); ?>/js/jquery.fitvids.js"></script>
 
