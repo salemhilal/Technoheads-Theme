@@ -30,44 +30,23 @@ html {
     -webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
     -ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 }
-body {
-  background: #fff;
-  font-family: sans-serif;
-}
-article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
-    display: block;
-}
-ol, ul {
-    list-style: none;
-}
+body {background: #fff; font-family: sans-serif;}
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {display: block;}
+ol, ul {list-style: none;}
 table { /* tables still need 'cellspacing="0"' in the markup */
     border-collapse: separate;
     border-spacing: 0;
 }
-caption, th, td {
-    font-weight: normal;
-    text-align: left;
-}
+caption, th, td {font-weight: normal; text-align: left;}
 blockquote:before, blockquote:after,
-q:before, q:after {
-    content: "";
-}
-blockquote, q {
-    quotes: "" "";
-}
-a:focus {
-    outline: thin dotted;
-}
+q:before, q:after {content: "";}
+blockquote, q {quotes: "\"" "\"";}
+/* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
 a:hover,
-a:active { /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
-    outline: 0;
-}
-a img {
-    border: 0;
-}
-h1{
-  font-weight: normal;
-}
+a:active {outline: 0;}
+a img {border: 0;}
+h1 {font-weight: normal;}
+*:focus {outline: none;}
 
 /*------------------------------------ 
  * Fonts
@@ -110,6 +89,28 @@ body{
 }
 #primary{
   width: 100%;
+}
+
+/*------------------------------------ 
+ * Searchform
+ *------------------------------------*/
+#searchform input{
+  width: 100%;
+  line-height: 1.6em;
+  margin-bottom: 15px;
+  border: none;
+  padding-left: 10px;
+  display: block;
+  box-sizing: border-box;
+  border-radius: 2px;
+  font-family: "bignoodletitlingregular";
+  font-size: 1.7em;
+  padding-bottom: 0;
+}
+
+#s:focus{
+  outline: none;
+  box-shadow: inset 0px 0px 5px #ccc;
 }
 
 /*------------------------------------ 
@@ -199,6 +200,11 @@ h1.entry-title a:visited, h1.entry-title a:active, h1.entry-title a{
 }
 
 /* Content */
+p{
+  font-family: 'Dosis', sans-serif;
+  font-size: 1.2em;
+  font-weight: 500;
+}
 
 /* Meta */
 .entry-meta a .entry-date, .entry-meta a:visited .entry-date{
@@ -223,8 +229,12 @@ h1.entry-title a:visited, h1.entry-title a:active, h1.entry-title a{
 .header{
   background-color: #222222;
   text-align: right;
-  margin: 12px 0;
+  margin: 0 0 15px;
   overflow:hidden;
+}
+.header-wrapper{
+  width: 100%;
+  background: #222222;
 }
 .site-title{
   position: relative; 
@@ -241,6 +251,7 @@ h1.entry-title a:visited, h1.entry-title a:active, h1.entry-title a{
 }
 .site-title h1{
   margin:0;
+  padding-right: 15px;
 }
 .heads{
   color: #9C504B;
@@ -262,16 +273,33 @@ h1.entry-title a:visited, h1.entry-title a:active, h1.entry-title a{
   margin-bottom: 5px;
   background: none;
   color: #222;
-  display: block;
+  display: inline-block;
   width: 100%;
 }
-.menu li a:hover{
+/*.menu li.page_item a:hover{
   background-color: #222;
   color: #EFEFEF;
+}*/
+.menu li.current_page_item a{
+  color: #9C504B;
+  overflow:hidden;
+  border-left: 5px solid;
+  padding-left: 5px;
 }
 .menu {
   font-family: bignoodletitlingregular;
   font-size: 2.4em;
+  overflow:hidden;
+}
+li.page_item{
+  width: 200%;
+  position:relative;
+}
+li.page_item a{
+  width: 50%;
+  border-left: 5px solid;
+  padding-left: 5px;
+  box-sizing: border-box;
 }
 
 /*------------------------------------ 
