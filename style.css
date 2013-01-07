@@ -164,6 +164,7 @@ article.post:after{
 }
 .featured-image{
   overflow: hidden;
+  z-index: 10;
 }
 .featured-image {
   position: relative;
@@ -194,6 +195,7 @@ h1.entry-title{
   font-family: 'bignoodletitlingoblique';
   font-size: 4em;
   margin: 0;
+  z-index: 1;
 }
 h1.entry-title a:visited, h1.entry-title a:active, h1.entry-title a{
   color: inherit;
