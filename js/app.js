@@ -31,24 +31,24 @@ $(document).ready(function(){
     }
   });
 
-  $(".page_item").hover(function(){
-    console.log("Sure");
-    var that = $(this).children("a").first();
-    var c = $(that).clone().addClass("slide-over");
-    $(c).css({
-      "background-color":"#222222",
-      "color":"#EFEFEF",
-      "position":"absolute",
-      "left":"500px"
-    });
-    $(that).after(c);
-    var that = that;
-    $(c).animate({left: '0px'});
+  $(".menu li:first").addClass("page_item");
+  $(".page_item, .menu li:first").hover(function(){
+    if(!$(this).hasClass("current_page_item")){
+      var that = $(this).children("a").first();
+      var c = $(that).clone().addClass("slide-over");
+      $(c).css({
+        "background-color":"#222222",
+        "color":"#EFEFEF",
+        "position":"absolute",
+        "left":"-500px"
+      });
+      $(that).after(c);
+      var that = that;
+      $(c).animate({left: '0px'});
+    }
   }, function(){
-    console.log("yo");
     var hover = $(this).children(".slide-over").first();
-    console.log(hover);
-    $(hover).animate({left: '500px'}, function(){$(hover).remove()});
+    $(hover).animate({left: '-500px'}, function(){$(hover).remove()});
   });
 
 });

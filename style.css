@@ -98,7 +98,7 @@ body{
   width: 100%;
   line-height: 1.6em;
   margin-bottom: 15px;
-  border: none;
+  border: 1px solid #CCCCCC;
   padding-left: 10px;
   display: block;
   box-sizing: border-box;
@@ -126,6 +126,7 @@ article.post{
           border-radius: 2px;
   background-color: white;
   padding: 15px 15px 20px;
+  border: 1px solid #CCCCCC;
 }
 article.post:before,
 article.post:after {
@@ -276,10 +277,6 @@ p{
   display: inline-block;
   width: 100%;
 }
-/*.menu li.page_item a:hover{
-  background-color: #222;
-  color: #EFEFEF;
-}*/
 .menu li.current_page_item a{
   color: #9C504B;
   overflow:hidden;
