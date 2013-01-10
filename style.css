@@ -6,47 +6,49 @@ Description:  This is a theme for my blog at technoheads.org
 Version:    0.0.1
 */
 
-/*------------------------------------ 
- * Reset
+/*------------------------------------
+ * Global Styling
  *------------------------------------*/
+body {
+  background-color: #efefef;margin: 0;
+  font-family: 'Dosis', sans-serif;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+#nav-above  {display: none;}
+#main       {padding:0;}
+#primary    {width: 100%;}
+a img       {border: 0;}
+h1          {font-weight: normal;}
+*:focus     {outline: 0;}
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
-    border: 0;
-    font-family: inherit;
-    font-size: 100%;
-    font-style: inherit;
-    font-weight: inherit;
-    margin: 0;
-    outline: 0;
-    padding: 0;
-    vertical-align: baseline;
+h2, h4, h6{
+  font-family: "bignoodletitlingregular", sans-serif;
 }
-html {
-    font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
-    overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */
-    -webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
-    -ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+
+h1, h3, h5{
+  font-family: "bignoodletitlingoblique", sans-serif;
 }
-body {background: #fff; font-family: sans-serif;}
-article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {display: block;}
-ol, ul {list-style: none;}
-table { /* tables still need 'cellspacing="0"' in the markup */
-    border-collapse: separate;
-    border-spacing: 0;
+
+h1 {
+  font-size: 4em;
+  margin: 0;
 }
-caption, th, td {font-weight: normal; text-align: left;}
-blockquote:before, blockquote:after,
-q:before, q:after {content: "";}
-blockquote, q {quotes: "\"" "\"";}
-/* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
-a:hover,
-a:active {outline: 0;}
-a img {border: 0;}
-h1 {font-weight: normal;}
-*:focus {outline: none;}
+h2 { 
+  color: #9C504B;
+  font-size: 2.7em;
+  margin: .5em 0 .2em;
+}
+h3{
+  font-size: 2em;
+  margin: .5em 0 .2em;
+}
+h4{
+  font-size: 1.5em;
+  margin: .3em 0 .1em;
+  color: #666666;
+}
+
 
 /*------------------------------------ 
  * Fonts
@@ -74,43 +76,25 @@ h1 {font-weight: normal;}
 }
 
 /*------------------------------------ 
- * Global Styling
- *------------------------------------*/
-body{
-  background-color: #EFEFEF;
-  margin: 0;
-}
-#nav-above{
-  display: none;
-}
-#main{
-  background: none; /* TODO: Remove this when you remove .col backgrounds. */
-  padding:0;
-}
-#primary{
-  width: 100%;
-}
-
-/*------------------------------------ 
  * Searchform
  *------------------------------------*/
 #searchform input{
   width: 100%;
-  line-height: 1.6em;
   margin-bottom: 15px;
-  border: 1px solid #CCCCCC;
-  padding-left: 10px;
+  border: 1px solid #cccccc;
+  padding: 8px 10px 5px;
   display: block;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
   border-radius: 2px;
-  font-family: "bignoodletitlingregular";
+  font-family: "bignoodletitlingregular", sans-serif;
   font-size: 1.7em;
-  padding-bottom: 0;
 }
 
 #s:focus{
   outline: none;
-  box-shadow: inset 0px 0px 5px #ccc;
+  box-shadow: inset 0 0 5px #ccc;
 }
 
 /*------------------------------------ 
@@ -120,13 +104,12 @@ body{
 article.post{
   position:relative;
   margin-bottom: 25px;
-  border: 5px solid white;
   -webkit-border-radius: 2px;
      -moz-border-radius: 2px;
           border-radius: 2px;
   background-color: white;
   padding: 15px 15px 20px;
-  border: 1px solid #CCCCCC;
+  border: 1px solid #cccccc;
 }
 article.post:before,
 article.post:after {
@@ -145,6 +128,7 @@ article.post:before{
   left:10px;
   -webkit-transform:rotate(-2deg);
      -moz-transform:rotate(-2deg);
+      -ms-transform: matrix(1.000,-0.031,0.031,1.000,0,0);
        -o-transform:rotate(-2deg);
           transform:rotate(-2deg);
 }
@@ -153,24 +137,19 @@ article.post:after{
   left:auto;
   -webkit-transform:rotate(2deg);
      -moz-transform:rotate(2deg);
+      -ms-transform: matrix(1.000,0.031,-0.031,1.000,0,0);
        -o-transform:rotate(2deg);
           transform:rotate(2deg);
  }
 
 /* Featured image */
-.attachment-post-thumbnail.wp-post-image{
-  width: 100%;
-  height: inherit;
-}
 .featured-image{
   overflow: hidden;
   z-index: 10;
-}
-.featured-image {
   position: relative;
   max-width: 100%;
-  float: left;
   margin-bottom:15px;
+  display: block;
 }
 .featured-image:before {
   content: "";
@@ -185,17 +164,19 @@ article.post:after{
 } 
 .featured-image img {
   float: left;
+  width: 100%;
+  height: inherit;
 } 
 
 /* Heading */
 article.post header{
   position: relative;
+  margin-bottom: 10px;
+  clear: both;
 }
 h1.entry-title{
-  font-family: 'bignoodletitlingoblique';
-  font-size: 4em;
-  margin: 0;
-  z-index: 1;
+  border-bottom: 1px solid #cccccc;
+  padding-bottom: 5px;
 }
 h1.entry-title a:visited, h1.entry-title a:active, h1.entry-title a{
   color: inherit;
@@ -203,19 +184,15 @@ h1.entry-title a:visited, h1.entry-title a:active, h1.entry-title a{
 }
 
 /* Content */
-p{
-  font-family: 'Dosis', sans-serif;
-  font-size: 1.2em;
-  font-weight: 500;
-}
 
-/* Meta */
-.entry-meta a .entry-date, .entry-meta a:visited .entry-date{
+
+/* Footer/Meta */
+a .entry-date, a:visited .entry-date{
   font-size: .9em;
   padding: 0 10px;
   position: absolute;
-  bottom: 13px;
-  right: 0px;
+  bottom: 21px;
+  right: 0;
   text-decoration: none;
   font-style: italic;
   color:#555555;
@@ -225,39 +202,61 @@ p{
   text-decoration: underline;
 }
 
-
 /*------------------------------------ 
  * Page Header stuff
  *------------------------------------*/
 .header{
-  background-color: #222222;
   text-align: right;
-  margin: 0 0 15px;
   overflow:hidden;
 }
 .header-wrapper{
   width: 100%;
   background: #222222;
+  margin-bottom: 15px;
+  -webkit-box-shadow: inset 0px -12px 12px -8px black;
+     -moz-box-shadow: inset 0px -12px 12px -8px black;
+          box-shadow: inset 0px -12px 12px -8px black;
 }
 .site-title{
   position: relative; 
   bottom: -33px;
   margin: 0;
   padding: 0;
-  font-family: 'bignoodletitlingregular';
-  color: #EFEFEF;
-  font-size: 4em;
+  color: #efefef;
+  font-size: 1.7em;
 }
 .site-title a, .site-title a:visited, .site-title a:hover, .site-title a:active {
   color: inherit;
   text-decoration: none;
 }
 .site-title h1{
+  font-family: bignoodletitlingregular, sans-serif;
   margin:0;
   padding-right: 15px;
 }
 .heads{
-  color: #9C504B;
+  color: #9c504b;
+}
+
+/*------------------------------------ 
+ * Page footer stuff
+ *------------------------------------*/
+.footer-wrapper{
+  background-color: #222222;
+  -webkit-box-shadow: inset 0 8px 6px -6px black;
+     -moz-box-shadow: inset 0 8px 6px -6px black;
+          box-shadow: inset 0 8px 6px -6px black;
+  color: #efefef; 
+  padding-bottom: 30px;
+}
+.footer-wrapper a, .footer-wrapper a:visited, .footer-wrapper a:active{
+  color: #efefef;
+}
+.footer-wrapper a:hover{
+  color: #ffffff;
+}
+.site-info{
+  text-align: center;
 }
 
 /*------------------------------------ 
@@ -271,7 +270,6 @@ p{
   margin: 0;
 }
 .menu li a{
-  color: inherit;
   text-decoration: none;
   margin-bottom: 5px;
   background: none;
@@ -280,13 +278,10 @@ p{
   width: 100%;
 }
 .menu li.current_page_item a{
-  color: #9C504B;
-  overflow:hidden;
-  border-left: 5px solid;
-  padding-left: 5px;
+  color: #9c504b;
 }
 .menu {
-  font-family: bignoodletitlingregular;
+  font-family: bignoodletitlingregular, sans-serif;
   font-size: 2.4em;
   overflow:hidden;
 }
@@ -308,23 +303,23 @@ blockquote p:first-letter {
   margin: -.3em .1em -.1em;
   font-size: 3em;
   float: left;
-  color: #9C504B;
+  color: #9c504b;
 }
 blockquote p {
   color: #222;
-  font-family: bignoodletitlingregular;
+  font-family: bignoodletitlingregular, sans-serif;
   font-size: 1.5em;
 }
 blockquote p cite {
   float: right;
   font-size: 1.1em;
-  font-family: bignoodletitlingoblique;
+  font-family: bignoodletitlingoblique sans-serif;
 }
 blockquote p cite:before {
   content: "- ";
 }
 blockquote p cite a {
-  color: #9C504B;
+  color: #9c504b;
   text-decoration:  none;
 }
 
@@ -332,13 +327,13 @@ blockquote p cite a {
  * Search Page
  *------------------------------------*/
 .search-header{
-  font-family: bignoodletitlingregular;
+  font-family: bignoodletitlingregular, sans-serif;
   font-size: 3em;
   margin: 10px 0;
 }
 .search-term{
-  font-family: bignoodletitlingoblique;
-  color: #9C504B;
+  font-family: bignoodletitlingoblique, sans-serif;
+  color: #9c504b;
 }
 
 
@@ -348,24 +343,33 @@ blockquote p cite a {
 
 /* Reusable column setup */
 .col {
-  border:0px solid rgba(0,0,0,0);
+  border:0 solid rgba(0,0,0,0);
   margin-bottom: 10px;
   float:left;
   -webkit-box-sizing:border-box;
-  -moz-box-sizing:border-box;
-  box-sizing:border-box;
-  -moz-background-clip:padding-box !important;
+     -moz-box-sizing:border-box;
+          box-sizing:border-box;
   -webkit-background-clip:padding-box !important;
-  background-clip:padding-box !important;
+     -moz-background-clip:padding-box !important;
+          background-clip:padding-box !important;
+}
+/* Clearing for the rows. */
+.clear:before, .clear:after{
+  content: "";
+  display: table;
+}
+.clear:after{
+  clear: both;
+}
+.clear { 
+  zoom: 1; /* For IE 6/7 (trigger hasLayout) */
 }
 
 /* Page wrapper */
 .page {
   margin: 0 auto;
-  max-width: 95%;
-  /*overflow:hidden;*/
   position:relative;
-  max-width: 1000px;
+  max-width: 1100px;
 }
 
 
@@ -388,7 +392,6 @@ Span 4:  100%
   .row .col:first-child {
     margin-left:0;
   }
-  
   
   .span_1 {
     width:23.5%;
@@ -426,7 +429,6 @@ Span 6:  100%
   .row .col:first-child {
     margin-left:0;
   }
-  
   
   .span_1 {
     width:15.0%;
@@ -478,7 +480,6 @@ Span 12:  100%
     margin-left:0;
   }
   
-  
   .span_1,
   .header_padding {
     width:6.5%;
@@ -491,7 +492,7 @@ Span 12:  100%
     width:23.5%;
   }
   .span_4,
-  .media_block {
+  .widget {
     width:32.0%;
   }
   .span_5 {
@@ -534,7 +535,7 @@ Span 12:  100%
 
   /* Move the logo to be flush with the bottom of the header. */
   .site-title { 
-    bottom: -26px;
+    bottom: -27px;
   }
 
   /* Make blockquotes pretty. */

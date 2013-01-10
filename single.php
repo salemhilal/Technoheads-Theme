@@ -10,7 +10,6 @@ get_header(); ?>
 
   <div id="primary" class="content-area">
     <div id="content" class="site-content" role="main">
-
     <?php while ( have_posts() ) : the_post(); ?>
 
       <?php technoheads_content_nav( 'nav-above' ); ?>
@@ -29,6 +28,8 @@ get_header(); ?>
 
     </div><!-- #content .site-content -->
   </div><!-- #primary .content-area -->
+</div><!-- .row -->
+<div class="row">
  
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

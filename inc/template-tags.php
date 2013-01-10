@@ -14,7 +14,7 @@ if ( ! function_exists( 'technoheads_posted_on' ) ) :
  * @since Technoheads 0.0.1
  */
 function technoheads_posted_on() {
-  printf( __( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="byline"></span>', 'technoheads' ),
+  printf( __( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a><span class="byline"></span>', 'technoheads' ),
     esc_url( get_permalink() ),
     esc_attr( get_the_time() ),
     esc_attr( get_the_date( 'c' ) ),
@@ -88,7 +88,6 @@ if ( ! function_exists( 'technoheads_content_nav' ) ):
    
     ?>
     <nav role="navigation" id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?>">
-      <h1 class="assistive-text"><?php _e( 'Post navigation', 'technoheads' ); ?></h1>
    
     <?php if ( is_single() ) : // navigation links for single posts ?>
    

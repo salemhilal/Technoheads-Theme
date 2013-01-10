@@ -37,7 +37,7 @@
     }
 
   ?></title>
-  <meta name="description" content=<?php bloginfo('description'); ?> />
+  <meta name="description" content="<?php bloginfo('description'); ?>" />
   <meta name="viewport" content="width=device-width" />
 
   <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/normalize.min.css" />
@@ -62,17 +62,15 @@
     <div class="row heading">
       <div class="header column">
         <header id="masthead" class="site-header" role="banner">
-          <hgroup>
-            <div class="site-title">
               <a href="<?php echo home_url('/'); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display') ); ?>" rel="home">
+          <hgroup class="site-title">
                 <!-- <?php bloginfo('name'); ?> -->
                 <h1>Techno<span class="heads">heads.</span></h1> 
-              </a>
-            </div>
             <!-- <h2 class="site-description">
               <?php bloginfo('description'); ?>
             </h2> -->
           </hgroup>
+              </a>
           
         </header>
       </div>
@@ -80,13 +78,5 @@
   </div>
   </div>
 
-  <div id="page" class="hfeed site page">
-    <div class="row">
-      <div class="navigation col">
-        <nav class="site-navigation main-navigation" role="navigation">
-          <?php include (TEMPLATEPATH . '/searchform.php'); ?>
-          <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
-        </nav>
-      </div>
-      <div id="main" class="site-main main_content col">
+
 
