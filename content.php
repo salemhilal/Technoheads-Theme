@@ -21,7 +21,7 @@
       <?php technoheads_posted_on(); ?>
     </div><!-- .entry-meta -->
   </header><!-- .entry-header -->
-  
+
   <?php endif; ?>
   <div class="post-content">
     <?php if ( is_search() ) : // Only display Excerpts for Search ?>
@@ -34,6 +34,7 @@
       <?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'technoheads' ), 'after' => '</div>' ) ); ?>
     </div><!-- .entry-content -->
     <?php endif; ?>
+    <div style="clear:both"></div>
     <footer class="entry-meta">
       <?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
         <?php

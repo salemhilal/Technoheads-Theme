@@ -57,26 +57,19 @@
   <!--[if lt IE 7]>
       <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
   <![endif]-->
-  <div class="header-wrapper">
-  <div class="page">
-    <div class="row heading">
-      <div class="header column">
-        <header id="masthead" class="site-header" role="banner">
-              <a href="<?php echo home_url('/'); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display') ); ?>" rel="home">
-          <hgroup class="site-title">
-                <!-- <?php bloginfo('name'); ?> -->
-                <h1>Techno<span class="heads">heads.</span></h1> 
-            <!-- <h2 class="site-description">
-              <?php bloginfo('description'); ?>
-            </h2> -->
-          </hgroup>
-              </a>
-          
-        </header>
+  <header class="header-wrapper">
+    <div class="page">
+      <div class="row heading">
+        <div class="header column">
+          <div id="masthead" class="site-header" role="banner">
+            <a href="<?php echo home_url('/'); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display') ); ?>" rel="home">
+              <h1 class="site-title">Techno<span class="heads">heads.</span></h1> 
+            </a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  </div>
+  </header>
 
 
 

@@ -56,4 +56,5 @@
  
     <?php edit_post_link( __( 'Edit', 'technoheads' ), '<span class="edit-link">', '</span>' ); ?>
   </footer><!-- .entry-meta -->
+  <div style="clear:both"></div>
 </article><!-- #post-<?php the_ID(); ?> -->
