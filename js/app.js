@@ -1,22 +1,13 @@
-$(document).ready(function(){
-  //"Static" values. 
-  var featuredHeight = 350,
-      animationTime = 200;
+//"Static" values. 
+var featuredHeight = 350,
+    animationTime = 200;
 
+$(document).ready(function(){
   //Temp stuff for testing.
   $($(".page_item").splice(3)).hide();
 
   //Ensure videos embedded in posts fit well.
   $(".post").fitVids();
-
-  //Crop images as necessary.
-  $(".featured-image img").filter(function(i,e){return $(e).height() > 400}).each(function(i,e){
-    var overflow = featuredHeight - $(e).height();
-    var top = overflow/2; bottom = overflow/2;
-    if(overflow%2 == 1){top++;}
-
-    $(e).css("margin-top", top + "px").css("margin-bottom", bottom + "px");
-  });
 
   //Navigation menu expanding and such.
   $(".menu ul ul").hide();
@@ -49,6 +40,57 @@ $(document).ready(function(){
   }, function(){
     var hover = $(this).children(".slide-over").first();
     $(hover).animate({left: '-500px'}, function(){$(hover).remove()});
+  });
+
+});
+
+$(window).load(function(){
+  //Crop images as necessary.
+  console.log("Window loaded");
+
+
+  $("#page, .footer-wrapper").fadeIn(function(){
+      $(".featured-image img").filter(function(i,e){return $(e).height() > 400}).each(function(i,e){
+        console.log("cropping", $(this));
+        var overflow = featuredHeight - $(e).height();
+        var top = overflow/2; bottom = overflow/2;
+        if(overflow%2 == 1){top++;}
+        $(e).animate({
+          'margin-top' : top + 'px',
+          'margin-bottom' : bottom + 'px'
+        });
+
+    // $(e).css("margin-top", top + "px").css("margin-bottom", bottom + "px");
+    });
+  });
+
+  //Set current width.
+  var prevwidth = $(window).width();
+
+  $(window).resize(function(){
+    var now = $(window).width()
+
+    if(Math.abs(now - prevwidth > 100)){
+      prevwidth = now;
+      $(".featured-image img").each(function(i,e){
+
+        var top, bottom;
+        if($(e).height() > 400){
+          var overflow = featuredHeight - $(e).height();
+          top = overflow/2; bottom = overflow/2;
+          if(overflow%2 == 1){top++;}
+        }
+        else{
+          top = 0; bottom = 0;
+        }
+        
+        $(e).animate({
+          'margin-top' : top + 'px',
+          'margin-bottom' : bottom + 'px'
+        }, 100);
+      });
+    }
+
   });
 
 });

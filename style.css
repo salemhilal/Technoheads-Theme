@@ -1,9 +1,10 @@
 /*
-Theme Name:   Technoheads
-Author:     Salem Hilal
-Author URI:   http://technoheads.org
-Description:  This is a theme for my blog at technoheads.org
-Version:    0.0.1
+Theme Name:       Technoheads
+Author:           Salem Hilal
+Author URI:       http://technoheads.org
+Github Theme URI: https://github.com/username/repo-name
+Description:      This is a theme for my blog at technoheads.org
+Version:          0.1.0
 */
 
 /*------------------------------------
@@ -16,6 +17,7 @@ body {
   font-weight: 500;
 }
 #main       {padding:0;}
+#main a     {color: }
 #primary    {width: 100%;}
 a img       {border: 0;}
 h1          {font-weight: normal;}
@@ -46,6 +48,10 @@ h4{
   font-size: 1.5em;
   margin: .3em 0 .1em;
   color: #666666;
+}
+
+#page, .footer-wrapper{
+  /*display: none;*/
 }
 
 
@@ -157,10 +163,19 @@ article.post:after{
   bottom: 0;
   left: 0;
   right: 0;
-  -webkit-box-shadow: inset 0 0 20px rgba(0,0,0,.6);
-     -moz-box-shadow: inset 0 0 20px rgba(0,0,0,.6);
-          box-shadow: inset 0 0 20px rgba(0,0,0,.6);
+  opacity: 0.5;
+  -webkit-transition: opacity 0.5s ease-in-out; 
+     -moz-transition: opacity 0.5s ease-in-out; 
+       -o-transition: opacity 0.5s ease-in-out;
+          transition: opacity 0.5s ease-in-out;
+  -webkit-box-shadow: inset 0 0 30px black;
+     -moz-box-shadow: inset 0 0 30px black;
+          box-shadow: inset 0 0 30px black;
+          /*box-shadow: inset 0 0 20px rgba(0,0,0,.6);*/
 } 
+/*.featured-image:hover:before{
+  opacity: 0.9;
+}*/
 .featured-image img {
   float: left;
   width: 100%;
@@ -181,23 +196,35 @@ h1.entry-title a:visited, h1.entry-title a:active, h1.entry-title a{
   color: inherit;
   text-decoration: none;
 }
+header .mobile-logo{
+  display: none;
+}
 
 /* Content Images */
 .aligncenter {
-    display: block;
-    margin: 0 auto;
+  display: block;
+  margin: 0 auto;
 }
 .alignleft {
-    float: left;
-    margin: 10px 10px 10px 0px;
+  float: left;
+  margin: 10px 10px 10px 0px;
 }
 .alignright {
-    float: right;
-    margin: 10px 0 10px 10px;
+  float: right;
+  margin: 10px 0 10px 10px;
+}
+
+.alignright, .alignleft, .aligncenter,
+.alignright a, .alignleft a, .aligncenter a, 
+.alignright a img, .alignleft a img, .aligncenter a img {
+  max-width: 100%;
 }
 .post img {
-  max-width: 100%;
   height: inherit;
+}
+
+.gallery-caption {
+  font-size: .8em;
 }
 
 
@@ -219,10 +246,16 @@ a .entry-date, a:visited .entry-date{
 .entry-meta {
   clear: both;
   text-align: center;
+  margin: 10px 0; 
 }
 .tag-links a:before {
   content: "#"
 }
+
+/* Links */
+
+.post a, .post a:visited { color: #222222}
+.post a:hover, .post a:active { color: #9c504b}
 
 /*------------------------------------ 
  * Page Header stuff
@@ -288,11 +321,11 @@ a .entry-date, a:visited .entry-date{
 .navigation.col {
   padding: 0;
 }
-.menu > ul {
+.site-navigation .menu > ul {
   padding: 0;
   margin: 0;
 }
-.menu li a{
+.site-navigation .menu li a{
   text-decoration: none;
   margin-bottom: 5px;
   background: none;
@@ -300,10 +333,10 @@ a .entry-date, a:visited .entry-date{
   display: inline-block;
   width: 100%;
 }
-.menu li.current_page_item a{
+.site-navigation .menu li.current_page_item a{
   color: #9c504b;
 }
-.menu {
+.site-navigation .menu {
   font-family: bignoodletitlingregular, sans-serif;
   font-size: 2.4em;
   overflow:hidden;
@@ -348,7 +381,7 @@ blockquote p {
 blockquote p cite {
   float: right;
   font-size: 1.1em;
-  font-family: bignoodletitlingoblique sans-serif;
+  font-family: bignoodletitlingoblique, sans-serif;
 }
 blockquote p cite:before {
   content: "- ";
@@ -370,6 +403,11 @@ blockquote p cite a {
   font-family: bignoodletitlingoblique, sans-serif;
   color: #9c504b;
 }
+
+/*------------------------------------ 
+ * Gallery Stuff
+ *------------------------------------*/
+
 
 
 /*------------------------------------ 
@@ -418,7 +456,48 @@ Span 4:  100%
 
 ----------------------------------------------------------------------------- */
 
-@media screen and (min-width: 0px) and (max-width: 479px) {
+@media screen and (min-width: 0px) and (max-width: 629px) {
+  .site-header{
+    bottom: 0px;
+  }
+  .site-header h1{
+    display: none;
+  }
+  header .mobile-logo{
+    display: inline-block;
+    max-width: 592px;
+    float: right;
+    width: 80%;
+    height: inherit;
+    margin-top: 10%;
+    margin-right; 15px;
+  }
+  .navigation, .entry-meta{
+    display: none;
+  }
+  .page{
+    max-width: 98%;
+  }
+  .header-wrapper{
+    margin-bottom: 5px;
+  }
+  .post{
+    padding: 7px 7px 15px;
+  }
+  .post h1, .post h2, .post h3, .post h4{
+    zoom:.7;
+  }
+  h1.entry-title{
+    margin:0;
+  }
+  h1.entry-title a{
+    display: inline-block;
+    max-width: 85%;
+  }
+  .featured-image{
+    margin-bottom: 10px;
+  }
+
   
   .col {
     margin-left:2%;
@@ -437,26 +516,25 @@ Span 4:  100%
   .span_3 {
     width:74.5%;
   }
-  .span_4 {
+  .span_4,
+  .main_content {
     margin-left:0;
     width:100%;
   }
 }
 
-/* 2. 6 Column Grid 480px - 979px 
+/* 2. 4 Column Grid 480px - 979px 
 ----------------------------------------------------------------------------- 
 
-Span 1:  15.0%
-Span 2:  32.0%
-Span 3:  49.0%
-Span 4:  66.0%
-Span 5:  83.0%
-Span 6:  100%
+Span 1:  23.5%
+Span 2:  49.0%
+Span 3:  74.5%
+Span 4:  100%
 
 ----------------------------------------------------------------------------- */
 
-@media screen and (min-width: 480px) and (max-width: 979px) {
-  
+@media screen and (min-width: 630px) and (max-width: 979px) {
+
   .col {
     margin-left:2%;
     padding:0 1.5%;
@@ -464,23 +542,27 @@ Span 6:  100%
   .row .col:first-child {
     margin-left:0;
   }
-  
-  .span_1 {
-    width:15.0%;
+  .site-navigation .menu {
+    font-size: 1.8em;
+  }
+  .page{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+
+  .span_1,
+  .navigation {
+    width:23.5%;
   }
   .span_2 {
-    width:32.0%;
-  }
-  .span_3 {
     width:49.0%;
   }
-  .span_4 {
-    width:66.0%;
+  .span_3,
+  .main_content {
+    width:74.5%;
   }
-  .span_5 {
-    width:83.0%;
-  }
-  .span_6,
+  .span_4,
   .header {
     margin-left:0;
     width:100%;
@@ -514,9 +596,13 @@ Span 12:  100%
   .row .col:first-child {
     margin-left:0;
   }
+  .page{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
   
   .span_1,
-  .header_padding {
+  {
     width:6.5%;
   }
   .span_2 {
@@ -558,6 +644,14 @@ Span 12:  100%
     margin-left:0;
     width:100%;
   }
+}
+
+
+@media screen and (max-width: 729px){
+  .gallery-item{
+    width: 100% !important;
+  }
+
 }
 
 

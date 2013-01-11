@@ -36,7 +36,5 @@ get_header(); ?>
     </div><!-- #primary .content-area -->
   </div><!-- .row -->
 </div>
-<div class="row">
  
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

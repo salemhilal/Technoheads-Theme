@@ -16,6 +16,7 @@
 <head>
   <meta charset="<?php bloginfo('charset'); ?>" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
   <title><?php
     // Print the <title> tag based on what is being viewed.
     global $page, $paged;
@@ -38,7 +39,7 @@
 
   ?></title>
   <meta name="description" content="<?php bloginfo('description'); ?>" />
-  <meta name="viewport" content="width=device-width" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/normalize.min.css" />
   <link rel="profile" href="http://gmpg.org/xfn/11" />
@@ -51,6 +52,9 @@
   <!-- End wordpress header -->
 
   <script src="<?php bloginfo('stylesheet_directory'); ?>/js/vendor/modernizr-2.6.2.min.js"></script>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script>(window.jQuery && window.$) || document.write('<script src="<?php bloginfo('stylesheet_directory'); ?>/js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
 </head>
 
 <body <?php body_class(); ?>>
@@ -64,6 +68,7 @@
           <div id="masthead" class="site-header" role="banner">
             <a href="<?php echo home_url('/'); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display') ); ?>" rel="home">
               <h1 class="site-title">Techno<span class="heads">heads.</span></h1> 
+              <img src="<?php bloginfo('stylesheet_directory'); ?>/img/logo-mobile.png" alt="Technoheads" class="mobile-logo">
             </a>
           </div>
         </div>
