@@ -69,8 +69,10 @@ $(window).load(function(){
 
   $(window).resize(function(){
     var now = $(window).width()
+    
+    if(Math.abs(now - prevwidth) > 100){
+      console.log("Resizing");
 
-    if(Math.abs(now - prevwidth > 100)){
       prevwidth = now;
       $(".featured-image img").each(function(i,e){
 

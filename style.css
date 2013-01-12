@@ -2,9 +2,9 @@
 Theme Name:       Technoheads
 Author:           Salem Hilal
 Author URI:       http://technoheads.org
-Github Theme URI: https://github.com/username/repo-name
+Github Theme URI: https://github.com/bichiliad/Technoheads-Theme
 Description:      This is a theme for my blog at technoheads.org
-Version:          0.1.0
+Version:          v0.1.1
 */
 
 /*------------------------------------
@@ -25,10 +25,12 @@ h1          {font-weight: normal;}
 
 h2, h4, h6{
   font-family: "bignoodletitlingregular", sans-serif;
+  font-weight: normal;
 }
 
 h1, h3, h5{
   font-family: "bignoodletitlingoblique", sans-serif;
+  font-weight: normal;
 }
 
 h1 {
@@ -127,6 +129,7 @@ article.post:after {
   -webkit-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
      -moz-box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
           box-shadow:0 15px 10px rgba(0, 0, 0, 0.7);
+  max-height: 30px;
 
 }
 article.post:before{
@@ -458,7 +461,7 @@ Span 4:  100%
 
 @media screen and (min-width: 0px) and (max-width: 629px) {
   .site-header{
-    bottom: 0px;
+    bottom: 0px !important;
   }
   .site-header h1{
     display: none;
@@ -517,7 +520,8 @@ Span 4:  100%
     width:74.5%;
   }
   .span_4,
-  .main_content {
+  .main_content,
+  .widget {
     margin-left:0;
     width:100%;
   }
