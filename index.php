@@ -8,12 +8,18 @@
 
 get_header(); ?>
 
+  <?php get_sidebar(); ?>
+
+  
   <div id="page" class="hfeed site page">
+
+
     <div class="row clear">
 
-      <?php get_sidebar(); ?>
-      
+      <div class="before-padding col"></div>
+
       <div id="main" class="site-main main_content col">
+
         <div id="primary" class="content-area">
           <div id="content" class="site-content">
           <?php if(have_posts()) : ?>
@@ -26,9 +32,10 @@ get_header(); ?>
           <?php else : ?>
             <?php get_template_part('no-results', 'index'); ?>
           <?php endif ?>
-          </div><!-- #primary -->
-        </div><!-- #content -->
-      </div>
+          </div><!-- #content -->
+        </div><!-- #primary -->
+      </div><!-- #main -->
+      <div class="after-padding col"></div> 
     </div><!-- .row -->
   </div><!-- .hfeed .site .page -->
 

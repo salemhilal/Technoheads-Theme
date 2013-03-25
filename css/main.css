@@ -44,6 +44,10 @@ fieldset {
     padding: 0;
 }
 
+.ostrich{
+    width: 200px;
+}
+
 textarea {
     resize: vertical;
 }

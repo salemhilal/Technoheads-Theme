@@ -21,7 +21,7 @@ get_header(); ?>
 
           <?php technoheads_content_nav( 'nav-above' ); ?>
 
-          <?php get_template_part( 'content', 'single' ); ?>
+          <?php get_template_part( 'content', get_post_format() ); ?>
 
           <?php technoheads_content_nav( 'nav-below' ); ?>
 

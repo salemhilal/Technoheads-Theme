@@ -87,7 +87,7 @@ if ( ! function_exists( 'technoheads_content_nav' ) ):
       $nav_class = 'site-navigation post-navigation';
    
     ?>
-    <nav role="navigation" id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?>">
+    <nav role="navigation" id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?> clear">
    
     <?php if ( is_single() ) : // navigation links for single posts ?>
    

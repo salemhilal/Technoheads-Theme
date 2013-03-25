@@ -42,6 +42,19 @@ $(document).ready(function(){
     $(hover).animate({left: '-500px'}, function(){$(hover).remove()});
   });
 
+
+  //Make the nav bar get pushed up by the footer
+  $(window).scroll(function(){
+    var bottom = $(document).height() - window.scrollY;
+    if(bottom < 700){
+      $(".navigation").css("margin-top", 30 - (800 - bottom) + "px");
+    }
+    else if(window.scrollY < 95)
+      $(".navigation").css("margin-top", 30 - window.scrollY + "px");
+    else
+      $(".navigation").css("margin-top",   "-65px");
+  });
+
 });
 
 $(window).load(function(){
@@ -58,18 +71,19 @@ $(window).load(function(){
         $(e).animate({
           'margin-top' : top + 'px',
           'margin-bottom' : bottom + 'px'
-        });
+        }, 400);
 
     // $(e).css("margin-top", top + "px").css("margin-bottom", bottom + "px");
     });
   });
 
+
+  //TODO: Make this work not on difference in width, but in time since last resize. 
   //Set current width.
   var prevwidth = $(window).width();
 
   $(window).resize(function(){
-    var now = $(window).width()
-    
+    var now = $(window).width();
     if(Math.abs(now - prevwidth) > 100){
       console.log("Resizing");
 
@@ -80,16 +94,16 @@ $(window).load(function(){
         if($(e).height() > 400){
           var overflow = featuredHeight - $(e).height();
           top = overflow/2; bottom = overflow/2;
-          if(overflow%2 == 1){top++;}
+          if(overflow%2 == 1)
+            top++; 
         }
         else{
           top = 0; bottom = 0;
-        }
-        
+        }    
         $(e).animate({
           'margin-top' : top + 'px',
           'margin-bottom' : bottom + 'px'
-        }, 100);
+        }, 400);
       });
     }
 

@@ -52,6 +52,9 @@
   <!-- End wordpress header -->
 
   <script src="<?php bloginfo('stylesheet_directory'); ?>/js/vendor/modernizr-2.6.2.min.js"></script>
+  <script src="http://use.edgefonts.net/gentium-book-basic:n4,i4,n7,i7.js"></script>
+  <script src="http://use.edgefonts.net/cabin:n4,i4,n5,i5,n6,i6,n7,i7.js"></script>
+  <script src="http://use.edgefonts.net/bitter:n4,i4,n7.js"></script>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
   <script>(window.jQuery && window.$) || document.write('<script src="<?php bloginfo('stylesheet_directory'); ?>/js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
@@ -68,7 +71,8 @@
           <div id="masthead" class="site-header" role="banner">
             <a href="<?php echo home_url('/'); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display') ); ?>" rel="home">
               <h1 class="site-title">Techno<span class="heads">heads.</span></h1> 
-              <img src="<?php bloginfo('stylesheet_directory'); ?>/img/logo-mobile.png" alt="Technoheads" class="mobile-logo">
+              <!-- <img src="<?php bloginfo('stylesheet_directory'); ?>/img/logo.png" alt="Technoheads" class="logo" /> -->
+              <img src="<?php bloginfo('stylesheet_directory'); ?>/img/logo-mobile.png" alt="Technoheads" class="mobile-logo" />
             </a>
           </div>
         </div>

@@ -6,7 +6,7 @@
 * @since Technoheads 0.0.1
 */
 ?>
-      <div class="navigation col">
+      <div class="navigation">
         <nav class="site-navigation main-navigation" role="navigation">
           <?php include (TEMPLATEPATH . '/searchform.php'); ?>
           <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
