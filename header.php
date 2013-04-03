@@ -53,7 +53,7 @@
 
   <script src="<?php bloginfo('stylesheet_directory'); ?>/js/vendor/modernizr-2.6.2.min.js"></script>
   <script src="http://use.edgefonts.net/gentium-book-basic:n4,i4,n7,i7.js"></script>
-  <script src="http://use.edgefonts.net/cabin:n4,i4,n5,i5,n6,i6,n7,i7.js"></script>
+  <script src="http://use.edgefonts.net/gudea:n4,i4,n7.js"></script>
   <script src="http://use.edgefonts.net/bitter:n4,i4,n7.js"></script>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
@@ -69,16 +69,21 @@
       <div class="row heading">
         <div class="header column">
           <div id="masthead" class="site-header" role="banner">
+            <div class="row">
+            <div class="before-padding col"></div>
+            <div class="site-main col">
             <a href="<?php echo home_url('/'); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display') ); ?>" rel="home">
               <h1 class="site-title">Techno<span class="heads">heads.</span></h1> 
               <!-- <img src="<?php bloginfo('stylesheet_directory'); ?>/img/logo.png" alt="Technoheads" class="logo" /> -->
               <img src="<?php bloginfo('stylesheet_directory'); ?>/img/logo-mobile.png" alt="Technoheads" class="mobile-logo" />
-            </a>
+            </a> 
+            </div>
+            <div class="after-padding"></div>
+
+
+            </div>
           </div>
         </div>
       </div>
     </div>
   </header>
-
-
-

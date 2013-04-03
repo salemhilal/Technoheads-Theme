@@ -1,0 +1,712 @@
+/*
+Theme Name:       Technoheads
+Author:           Salem Hilal
+Author URI:       http://technoheads.org
+Github Theme URI: https://github.com/bichiliad/Technoheads-Theme
+Description:      This is a theme for my blog at technoheads.org
+Version:          v0.1.3
+*/
+
+/* Colors */
+@darkbg: #2D2D29;       //2B2823     
+@lightbg: #cfe3da;      //D4CEAA     
+@lightfg: #cfe3da;      //F9FADC, maybe BAD5D9? 
+@accent: #E24B2C;       //C06043
+@lightaccent: #A5B3AA;  //8FA691
+@textcolor: #666666;    //666666
+
+html, body {
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+.site-header{
+  h1{
+    color: @lightbg;
+    text-align: right;
+
+    span{
+      color: @accent;
+    }
+  }
+}
+
+/*------------------------------------
+ * Global Styling
+ *------------------------------------*/
+body {
+  margin: 0;
+  background-image: url("img/tiny_grid.png");
+  background-color: @lightbg; 
+  font-family: 'gudea', sans-serif;
+  font-size: 1.25em;
+  /*font-family: Helvetica, Arial, sans-serif;*/
+  /*font-size: 1em;*/
+  font-weight: 400;
+}
+#main       {padding:0;}
+#primary    {width: 100%;}
+a img       {border: 0;}
+h1          {font-weight: normal;}
+*:focus     {outline: 0;}
+
+h2, h4, h6{
+  font-family: "bitter", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+h1, h3, h5{
+  font-family: "bitter", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+h1 {
+  color: @darkbg;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+h2 { 
+  color: @accent;
+  font-size: 2.7em;
+  margin: .5em 0 .2em;
+}
+h3{
+  font-size: 2em;
+  margin: .5em 0 .2em;
+}
+h4{
+  font-size: 1.5em;
+  margin: .3em 0 .1em;
+  color: @textcolor;
+}
+
+#page, .footer-wrapper{
+  display: none;
+}
+#page{
+  padding-top: 30px;
+}
+
+/*------------------------------------ 
+ * Fonts
+ *------------------------------------*/
+@font-face {
+  font-family: 'bignoodletitlingregular';
+  src: url('fonts/big_noodle_titling-webfont.eot');
+  src: url('fonts/big_noodle_titling-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/big_noodle_titling-webfont.svg#bignoodletitlingregular') format('svg'),
+       url('fonts/big_noodle_titling-webfont.woff') format('woff'),
+       url('fonts/big_noodle_titling-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'bignoodletitlingoblique';
+  src: url('fonts/big_noodle_titling_oblique-webfont.eot');
+  src: url('fonts/big_noodle_titling_oblique-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/big_noodle_titling_oblique-webfont.svg#bignoodletitlingoblique') format('svg'),
+       url('fonts/big_noodle_titling_oblique-webfont.woff') format('woff'),
+       url('fonts/big_noodle_titling_oblique-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*------------------------------------ 
+ * Searchform
+ *------------------------------------*/
+#searchform input{
+  width: 100%;
+  margin-bottom: 15px;
+  border: 1px solid @lightaccent;
+  padding: 8px 10px 5px;
+  display: block;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 2px;
+  font-family: "bitter", serif;
+  font-size: 1.2em;
+}
+
+#s:focus{
+  outline: none;
+  box-shadow: inset 0 0 5px @lightaccent;
+}
+
+/*------------------------------------ 
+ * Post Stuff
+ *------------------------------------*/
+ 
+article.post{
+  position:relative;
+  margin-bottom: 25px;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  background-color: transparent;
+}
+
+
+/* Featured image */
+.featured-image{
+  overflow: hidden;
+  z-index: 10;
+  position: relative;
+  max-width: 100%;
+  margin-bottom:15px;
+  display: block;
+
+  img {
+    float: left;
+    width: 100%;
+    height: inherit;
+  } 
+}
+.featured-image:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.5;
+  -webkit-transition: opacity 0.5s ease-in-out; 
+     -moz-transition: opacity 0.5s ease-in-out; 
+       -o-transition: opacity 0.5s ease-in-out;
+          transition: opacity 0.5s ease-in-out;
+  -webkit-box-shadow: inset 0 0 30px black;
+     -moz-box-shadow: inset 0 0 30px black;
+          box-shadow: inset 0 0 30px black;
+          /*box-shadow: inset 0 0 20px rgba(0,0,0,.6);*/
+} 
+
+/* Heading */
+article.post header{
+  position: relative;
+  margin-bottom: 10px;
+  clear: both;
+}
+header.entry-header{
+  border-bottom: 1px solid @lightaccent;
+}
+h1.entry-title{
+  margin: 0 0 -5px;
+  max-width: 100%;
+}
+h1.entry-title a:visited, h1.entry-title a:active, h1.entry-title a{
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+  max-width: 85%;
+}
+header .mobile-logo{
+  display: none;
+}
+
+/* Content Images */
+.aligncenter {
+  display: block;
+  margin: 0 auto;
+}
+.alignleft {
+  float: left;
+  margin: 10px 10px 10px 0px;
+}
+.alignright {
+  float: right;
+  margin: 10px 0 10px 10px;
+}
+
+.alignright, .alignleft, .aligncenter,
+.alignright a, .alignleft a, .aligncenter a, 
+.alignright a img, .alignleft a img, .aligncenter a img {
+  max-width: 100%;
+}
+.post img {
+  height: inherit;
+}
+
+.gallery-caption {
+  font-size: .8em;
+}
+
+
+/* Footer/Meta */
+a .entry-date, a:visited .entry-date{
+  font-size: .9em;
+  font-style: italic;
+  color: @textcolor;
+}
+.header-entry-meta{
+  margin-bottom: 10px;
+}
+.header-entry-meta a{
+  text-decoration: none;
+}
+.header-entry-meta a:hover .entry-date{
+  color: @darkbg;
+}
+.entry-meta {
+  clear: both;
+  text-align: center;
+  margin: 10px 0; 
+}
+.tag-links a:before {
+  content: "#"
+}
+
+/* Links */
+
+.post a, .post a:visited { color: @darkbg}
+.post a:hover, .post a:active { color: @accent}
+
+/*------------------------------------ 
+ * Page Header stuff
+ *------------------------------------*/
+.header{
+  overflow:hidden;
+}
+header .logo{
+  display: inline-block;
+  max-width: 592px;
+  float: right;
+  width: 80%;
+  height: inherit;
+  margin-top: 7%;
+  margin-right: 15px;
+}
+
+.header-wrapper{
+  width: 100%;
+  background: @darkbg;
+  -webkit-box-shadow: inset 0px -12px 12px -8px black;
+     -moz-box-shadow: inset 0px -12px 12px -8px black;
+          box-shadow: inset 0px -12px 12px -8px black;
+}
+.site-header{
+  position: relative; 
+  padding: 0;
+  color: @lightbg; 
+  font-size: 1.7em;
+}
+.site-header a, .site-header a:visited, .site-header a:hover, .site-header a:active {
+  color: inherit;
+  text-decoration: none;
+}
+.site-header h1{
+  margin:0;
+  padding-right: 15px;
+  margin-bottom: -10px;
+  margin-top: 15px;
+}
+.heads{
+  color: @accent;
+}
+
+/*------------------------------------ 
+ * Page footer stuff
+ *------------------------------------*/
+.footer-wrapper{
+  background-color: @darkbg;
+  -webkit-box-shadow: inset 0 8px 6px -6px black;
+     -moz-box-shadow: inset 0 8px 6px -6px black;
+          box-shadow: inset 0 8px 6px -6px black;
+  color: @lightbg;  
+  padding-bottom: 30px;
+}
+.footer-wrapper a, .footer-wrapper a:visited{
+  color: @lightbg; 
+}
+.footer-wrapper a:hover, .footer-wrapper a:active{
+  color: @lightfg;
+}
+.site-info{
+  text-align: center;
+}
+.site-footer{
+  color: @lightaccent;
+  margin-top: 20px;
+  font-size: .8em;
+}
+.site-footer a, .site-footer a:visited{
+  text-decoration:underline;
+}
+.site-footer a:hover, .site-footer a:active{
+  color: @lightbg; 
+}
+#about a{
+  color: @accent;
+}
+
+/*------------------------------------ 
+ * Navigation
+ *------------------------------------*/
+/* Side */
+.navigation {
+  padding: 0;
+  width: 20%;
+  position: fixed;
+  left: 30px;
+  margin-top: 30px;
+
+}
+.site-navigation .menu > ul {
+  padding: 0;
+  margin: 0;
+}
+.site-navigation .menu li a{
+  text-decoration: none;
+  margin-bottom: 5px;
+  background: none;
+  color: @darkbg;
+  display: inline-block;
+  width: 100%;
+}
+.site-navigation .menu li.current_page_item a{
+  color: @accent;
+  border-left: 5px solid @accent;
+}
+.site-navigation .menu {
+  font-family: bitter, serif;
+  font-size: 1.2em;
+  overflow:hidden;
+}
+li.page_item{
+  width: 200%;
+  position:relative;
+
+  a{
+    width: 50%;
+    border-left: 5px solid @darkbg;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    box-sizing: border-box;
+  }
+}
+
+/* Top & Bottom */
+#nav-above {display: none;}
+#nav-below { 
+  margin-bottom: 10px;
+}
+.nav-previous {
+    float: left;
+}
+.nav-next {
+    float: right;
+}
+
+.nav-previous a, .nav-next a {
+    font-family: "bitter", sans-serif;
+    font-weight: 700;
+    // border: 1px solid #bbbbbb;
+    border-radius:  3px;
+    padding: 8px 10px;
+    font-size: 1.3em;
+    color: @textcolor;
+    // box-shadow: inset 0 0 1px 1px #f6f6f6;
+}
+
+.nav-previous a:hover, .nav-next a:hover {
+    background: @darkbg;
+    color: @lightbg; 
+    box-shadow: none;
+}
+
+.nav-previous, .nav-next {
+    margin-top: 10px;    
+    margin-bottom: 15px;    
+}
+
+/*------------------------------------ 
+ * Block Quotes
+ *------------------------------------*/
+blockquote p:first-letter {
+  margin: -.3em .1em -.1em;
+  font-size: 3em;
+  float: left;
+  color: @accent;
+}
+blockquote p {
+  color: @darkbg;
+  // font-family: bignoodletitlingregular, sans-serif;
+  font-family: bitter, serif;
+  font-size: 1.5em;
+}
+blockquote p cite {
+  float: right;
+  font-size: 1.1em;
+  font-family: bitter, serif;
+
+  // font-family: bignoodletitlingoblique, sans-serif;
+}
+blockquote p cite:before {
+  content: "- ";
+}
+blockquote p cite a {
+  color: @accent;
+  text-decoration:  none;
+}
+
+/*------------------------------------ 
+ * Search Page
+ *------------------------------------*/
+.search-header{
+  font-family: bitter, sans-serif;
+  font-size: 3em;
+  margin: 10px 0;
+}
+.search-term{
+  font-family: bitter, sans-serif;
+  color: @accent;
+}
+
+/*------------------------------------ 
+ * Comments
+ *------------------------------------*/
+.commentlist li.comment {
+  border-left: 3px solid #2d2d29;
+  padding-left: 10px;
+  margin-top: 20px;
+}
+
+
+/*------------------------------------ 
+ * Grid (Courtesy of Gridpak)
+ *------------------------------------*/
+
+/* Reusable column setup */
+.col {
+  border:0 solid rgba(0,0,0,0);
+  margin-bottom: 10px;
+  float:left;
+  -webkit-box-sizing:border-box;
+     -moz-box-sizing:border-box;
+          box-sizing:border-box;
+  -webkit-background-clip:padding-box !important;
+     -moz-background-clip:padding-box !important;
+          background-clip:padding-box !important;
+}
+/* Clearing for the rows. */
+.clear:before, .clear:after{
+  content: "";
+  display: table;
+}
+.clear:after{
+  clear: both;
+}
+.clear { 
+  zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+}
+
+/* Page wrapper */
+.page {
+  margin: 0 auto;
+  position:relative;
+  max-width: 1100px;
+}
+
+
+/* 1. 4 Column Grid 0px - 479px 
+----------------------------------------------------------------------------- 
+
+Span 1:  23.5%
+Span 2:  49.0%
+Span 3:  74.5%
+Span 4:  100%
+
+----------------------------------------------------------------------------- */
+
+@media screen and (min-width: 0px) and (max-width: 629px) {
+
+  #page{
+    padding-top: 15px;
+  }
+  .navigation, .entry-meta{
+    display: none;
+  }
+  .page{
+    max-width: 98%;
+  }
+  // .header-wrapper{
+  //   margin-bottom: 5px;
+  // }
+  .post{
+    padding: 7px 7px 15px;
+  }
+  .post h1, .post h2, .post h3, .post h4{
+    /*zoom:.6;*/
+  }
+  .featured-image{
+    margin-bottom: 10px;
+  }
+
+  
+  .col {
+    margin-left:2%;
+    padding:0 1.5%;
+  }
+  .row .col:first-child {
+    margin-left:0;
+  }
+  
+  .span_1 {
+    width:23.5%;
+  }
+  .span_2 {
+    width:49.0%;
+  }
+  .span_3 {
+    width:74.5%;
+  }
+  .span_4,
+  .main_content,
+  .widget {
+    margin-left:0;
+    width:100%;
+  }
+}
+
+/* 2. 4 Column Grid 480px - 979px 
+----------------------------------------------------------------------------- 
+
+Span 1:  23.5%
+Span 2:  49.0%
+Span 3:  74.5%
+Span 4:  100%
+
+----------------------------------------------------------------------------- */
+
+@media screen and (min-width: 630px) and (max-width: 979px) {
+
+  .col {
+    margin-left:2%;
+    padding:0 1.5%;
+  }
+  .row .col:first-child {
+    margin-left:0;
+  }
+
+  .navigation{
+    left: 10px;
+    width: 23%;
+  }
+
+
+
+  .span_1, 
+  .before-padding {
+    width:23.5%;
+  }
+  .span_2 {
+    width:49.0%;
+  }
+  .span_3,
+  .main_content {
+    width:74.5%;
+  }
+  .span_4,
+  .header {
+    margin-left:0;
+    width:100%;
+  }
+}
+
+/* 3. 12 Column Grid 980px - 1198px 
+----------------------------------------------------------------------------- 
+
+Span 1:  6.5%
+Span 2:  15.0%
+Span 3:  23.5%
+Span 4:  32.0%
+Span 5:  40.5%
+Span 6:  49.0%
+Span 7:  57.5%
+Span 8:  66.0%
+Span 9:  74.5%
+Span 10:  83.0%
+Span 11:  91.5%
+Span 12:  100%
+
+----------------------------------------------------------------------------- */
+
+@media screen and (min-width: 980px) {
+  
+  .col {
+    margin-left:2%;
+    padding:0 1.5%;
+  }
+  .row .col:first-child {
+    margin-left:0;
+  }
+  
+  .span_1, .after-padding {
+    width:6.5%;
+  }
+  .span_2 {
+    width:15.0%;
+  }
+  .span_3, .before-padding {
+    width:23.5%;
+  }
+  .span_4,
+  .widget {
+    width:32.0%;
+  }
+  .span_5 {
+    width:40.5%;
+  }
+  .span_6 {
+    width:49.0%;
+  }
+  .span_7 {
+    width:57.5%;
+  }
+  .span_8,.site-main {
+    width:66.0%;
+  }
+  .span_9 {
+    width:74.5%;
+  }
+  .span_10 {
+    width:83.0%;
+  }
+  .span_11 {
+    width:91.5%;
+  }
+  .span_12,
+  .header,
+  .footer {
+    margin-left:0;
+    width:100%;
+  }
+}
+
+
+@media screen and (max-width: 729px){
+  .gallery-item{
+    width: 100% !important;
+  }
+}
+
+/*------------------------------------ 
+ * Browser-specific fixes. Ugh.
+ *------------------------------------*/
+
+/* Firefox */
+@-moz-document url-prefix() {
+
+  /* Make blockquotes pretty. */
+  blockquote p:first-letter {
+    margin: -.1em .1em -0em;
+  }
+}
+
+/* IE 9 */
+.ie9 .site-header{
+  bottom: -26px;
+}

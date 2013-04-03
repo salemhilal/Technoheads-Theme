@@ -11,11 +11,8 @@ get_header(); ?>
   <?php get_sidebar(); ?>
 
   
-  <div id="page" class="hfeed site page">
-
-
-    <div class="row clear">
-
+  <div id="page" class="hfeed site page row clear">
+    
       <div class="before-padding col"></div>
 
       <div id="main" class="site-main main_content col">
@@ -36,7 +33,6 @@ get_header(); ?>
         </div><!-- #primary -->
       </div><!-- #main -->
       <div class="after-padding col"></div> 
-    </div><!-- .row -->
   </div><!-- .hfeed .site .page -->
 
 <?php get_footer(); ?>
