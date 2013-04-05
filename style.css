@@ -8,13 +8,12 @@ h1{font-weight:normal;}
 *:focus{outline:0;}
 h2,h4,h6{font-family:"bitter",sans-serif;font-weight:700;font-style:normal;}
 h1,h3,h5{font-family:"bitter",sans-serif;font-weight:700;font-style:normal;}
-h1{color:#2d2d29;font-size:2em;margin-bottom:10px;}
-h2{color:#e24b2c;font-size:2.7em;margin:.5em 0 .2em;}
-h3{font-size:2em;margin:.5em 0 .2em;}
-h4{font-size:1.5em;margin:.3em 0 .1em;color:#666666;}
+h1{color:#2d2d29;}
+h2{color:#e24b2c;}
+h4{color:#666666;}
 #page,.footer-wrapper{display:none;}
 #page{padding-top:30px;}
-@font-face{font-family:'bignoodletitlingregular';src:url('fonts/big_noodle_titling-webfont.eot');src:url('fonts/big_noodle_titling-webfont.eot?#iefix') format('embedded-opentype'),url('fonts/big_noodle_titling-webfont.svg#bignoodletitlingregular') format('svg'),url('fonts/big_noodle_titling-webfont.woff') format('woff'),url('fonts/big_noodle_titling-webfont.ttf') format('truetype');font-weight:normal;font-style:normal;}@font-face{font-family:'bignoodletitlingoblique';src:url('fonts/big_noodle_titling_oblique-webfont.eot');src:url('fonts/big_noodle_titling_oblique-webfont.eot?#iefix') format('embedded-opentype'),url('fonts/big_noodle_titling_oblique-webfont.svg#bignoodletitlingoblique') format('svg'),url('fonts/big_noodle_titling_oblique-webfont.woff') format('woff'),url('fonts/big_noodle_titling_oblique-webfont.ttf') format('truetype');font-weight:normal;font-style:normal;}#searchform input{width:100%;margin-bottom:15px;border:1px solid #a5b3aa;padding:8px 10px 5px;display:block;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;border-radius:2px;font-family:"bitter",serif;font-size:1.2em;}
+@font-face{font-family:'bignoodletitlingregular';src:url('fonts/big_noodle_titling-webfont.eot');src:url('fonts/big_noodle_titling-webfont.eot?#iefix') format('embedded-opentype'),url('fonts/big_noodle_titling-webfont.svg#bignoodletitlingregular') format('svg'),url('fonts/big_noodle_titling-webfont.woff') format('woff'),url('fonts/big_noodle_titling-webfont.ttf') format('truetype');font-weight:normal;font-style:normal;}@font-face{font-family:'bignoodletitlingoblique';src:url('fonts/big_noodle_titling_oblique-webfont.eot');src:url('fonts/big_noodle_titling_oblique-webfont.eot?#iefix') format('embedded-opentype'),url('fonts/big_noodle_titling_oblique-webfont.svg#bignoodletitlingoblique') format('svg'),url('fonts/big_noodle_titling_oblique-webfont.woff') format('woff'),url('fonts/big_noodle_titling_oblique-webfont.ttf') format('truetype');font-weight:normal;font-style:normal;}#searchform input{width:100%;margin-bottom:15px;border:1px solid #a5b3aa;padding:8px 10px 5px;display:block;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;border-radius:2px;font-family:"bitter",serif;}
 #s:focus{outline:none;box-shadow:inset 0 0 5px #a5b3aa;}
 article.post{position:relative;margin-bottom:25px;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;background-color:transparent;}
 .featured-image{overflow:hidden;z-index:10;position:relative;max-width:100%;margin-bottom:15px;display:block;}.featured-image img{float:left;width:100%;height:inherit;}
@@ -41,7 +40,7 @@ a .entry-date,a:visited .entry-date{font-size:.9em;font-style:italic;color:#6666
 .header{overflow:hidden;}
 header .logo{display:inline-block;max-width:592px;float:right;width:80%;height:inherit;margin-top:7%;margin-right:15px;}
 .header-wrapper{width:100%;background:#2d2d29;-webkit-box-shadow:inset 0px -12px 12px -8px #000000;-moz-box-shadow:inset 0px -12px 12px -8px #000000;box-shadow:inset 0px -12px 12px -8px #000000;}
-.site-header{position:relative;padding:0;color:#cfe3da;font-size:1.7em;}
+.site-header{position:relative;padding:0;color:#cfe3da;}
 .site-header a,.site-header a:visited,.site-header a:hover,.site-header a:active{color:inherit;text-decoration:none;}
 .site-header h1{margin:0;padding-right:15px;margin-bottom:-10px;margin-top:15px;}
 .heads{color:#e24b2c;}

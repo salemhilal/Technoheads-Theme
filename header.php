@@ -41,11 +41,11 @@
   <meta name="description" content="<?php bloginfo('description'); ?>" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/normalize.min.css" />
   <link rel="profile" href="http://gmpg.org/xfn/11" />
   <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-  <link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800|Yanone+Kaffeesatz:400,300,700,200|Oswald:400,300,700|Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css'>
 
+  <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/normalize.min.css" />
+  <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/baseline.css" />
 
   <!-- Begin wordpress header -->
   <?php wp_head(); ?>
@@ -64,6 +64,8 @@
   <!--[if lt IE 7]>
       <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
   <![endif]-->
+
+  <!-- TODO: Come on, look at this mess. Clean this shit up. -->
   <header class="header-wrapper">
     <div class="page">
       <div class="row heading">
