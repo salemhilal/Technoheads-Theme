@@ -11,21 +11,24 @@
 if ( ! function_exists( 'technoheads_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
- * @since Technoheads 0.0.1
+ * @since Technoheads 1.0
  */
 function technoheads_posted_on() {
-  printf( __( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a><span class="byline"></span>', 'technoheads' ),
+  printf( __( 'Posted on <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="byline"> by <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'technoheads' ),
     esc_url( get_permalink() ),
     esc_attr( get_the_time() ),
     esc_attr( get_the_date( 'c' ) ),
-    esc_html( get_the_date() )
+    esc_html( get_the_date() ),
+    esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+    esc_attr( sprintf( __( 'View all posts by %s', 'technoheads' ), get_the_author() ) ),
+    esc_html( get_the_author() )
   );
 }
 endif;
  
 /**
  * Returns true if a blog has more than 1 category
- * @since Technoheads 0.0.1
+ * @since Technoheads 1.0
  */
 function technoheads_categorized_blog() {
   if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
@@ -51,7 +54,7 @@ function technoheads_categorized_blog() {
  
 /**
  * Flush out the transients used in technoheads_categorized_blog
- * @since Technoheads 0.0.1
+ * @since Technoheads 1.0
  */
 function technoheads_category_transient_flusher() {
   // Like, beat it. Dig?
@@ -87,7 +90,8 @@ if ( ! function_exists( 'technoheads_content_nav' ) ):
       $nav_class = 'site-navigation post-navigation';
    
     ?>
-    <nav role="navigation" id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?> clear">
+    <nav role="navigation" id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?>">
+      <h1 class="assistive-text"><?php _e( 'Post navigation', 'technoheads' ); ?></h1>
    
     <?php if ( is_single() ) : // navigation links for single posts ?>
    

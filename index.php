@@ -10,29 +10,41 @@ get_header(); ?>
 
   <?php get_sidebar(); ?>
 
-  
-  <div id="page" class="hfeed site page row clear">
+  <div class="main-container">
     
-      <div class="before-padding col"></div>
+    <div class="container">
 
-      <div id="main" class="site-main main_content col">
+      <div class="twelve columns offset-by-two">
 
-        <div id="primary" class="content-area">
-          <div id="content" class="site-content">
-          <?php if(have_posts()) : ?>
-            <?php technoheads_content_nav('nav-above'); ?>
-            <?php /* The Loop */ ?>
-            <?php while ( have_posts() ) : the_post() ?>
-              <?php get_template_part('content', get_post_format()); ?>
-            <?php endwhile; ?>
-            <?php technoheads_content_nav('nav-below'); ?>
-          <?php else : ?>
-            <?php get_template_part('no-results', 'index'); ?>
-          <?php endif ?>
-          </div><!-- #content -->
-        </div><!-- #primary -->
-      </div><!-- #main -->
-      <div class="after-padding col"></div> 
-  </div><!-- .hfeed .site .page -->
+        <div class="row">
+          <h1>Hello there</h1>
+          <h2>I'm Salem. I write on occasion.</h2>
+        </div>
 
-<?php get_footer(); ?>
+
+<!--   <div id="  primary" class="content-area">
+    <div id="content" class="site-content"> -->
+        <?php if(have_posts()) : ?>
+
+          <? // php technoheads_content_nav('nav-above'); ?>
+
+          <?php /* The Loop */ ?>
+          <?php while ( have_posts() ) : the_post() ?>
+            <?php get_template_part('content', get_post_format()); ?>
+          <?php endwhile; ?>
+          <?php technoheads_content_nav('nav-below'); ?>
+
+        <?php else : ?>
+
+          <?php get_template_part('no-results', 'index'); ?>
+
+        <?php endif ?>
+
+        <div class="row">
+          <?php get_footer(); ?>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
