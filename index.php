@@ -16,10 +16,19 @@ get_header(); ?>
 
       <div class="twelve columns offset-by-two">
 
-        <div class="row">
-          <h1>Hello there</h1>
-          <h2>I'm Salem. I write on occasion.</h2>
-        </div>
+        <hgroup class="row">
+          
+          <h1 class="site-title">
+            <a href="<?php echo home_url('/'); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display') ); ?>" rel="home">
+              <?php bloginfo('name'); ?>
+            </a>
+          </h1>
+
+          <h2 class="site-description subheader">
+            <?php bloginfo('description'); ?>
+          </h2>
+
+        </hgroup>
 
 
 <!--   <div id="  primary" class="content-area">

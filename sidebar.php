@@ -17,6 +17,13 @@
     <aside id="archives" class="widget">
       <h1 class="widget-title"><?php _e( 'Archives', 'technoheads' ); ?></h1>
       <ul>
+        <?php wp_list_categories( array( 'number' => 10, 'child_of' => 0)); ?>
+      </ul>
+    </aside>
+
+    <aside id="archives" class="widget">
+      <h1 class="widget-title"><?php _e( 'Archives', 'technoheads' ); ?></h1>
+      <ul>
         <?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
       </ul>
     </aside>
