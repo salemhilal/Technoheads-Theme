@@ -4,7 +4,7 @@
  * @since Technoheads 0.0.1
  */
 ?>
- 
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <header class="entry-header">
     <h1 class="entry-title"><?php the_title(); ?></h1>
@@ -57,3 +57,8 @@
     <?php edit_post_link( __( 'Edit', 'technoheads' ), '<span class="edit-link">', '</span>' ); ?>
   </footer><!-- .entry-meta -->
 </article><!-- #post-<?php the_ID(); ?> -->
+
+
+
+
+  <?php get_sidebar(); ?>

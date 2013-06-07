@@ -8,9 +8,8 @@
 * @since Technoheads 0.0.1
 */
 ?>
- 
-</div><!-- #main .site-main -->
- 
+
+
 <footer id="colophon" class="site-footer" role="contentinfo">
   <div class="site-info">
     <?php do_action( 'technoheads_credits' ); ?>
@@ -21,9 +20,16 @@
     &copy;2012 Salem Hilal.
   </div><!-- .site-info -->
 </footer><!-- #colophon .site-footer -->
-</div><!-- #page .hfeed .site -->
- 
+
 <?php wp_footer(); ?>
- 
+
+<!-- Scripts! -->
+<script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
+<script>
+	if(window.location.href.indexOf("center") != -1){
+  	$("#primary").addClass("offset-by-two");
+	}  
+</script>
+
 </body>
 </html>

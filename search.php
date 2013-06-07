@@ -8,8 +8,9 @@
  
 get_header(); ?>
  
-  <section id="primary" class="content-area">
-    <div id="content" class="site-content" role="main">
+<div class="main-container">  
+  <div class="container">
+    <div class="twelve columns offset-by-two">
 
     <?php if ( have_posts() ) : ?>
 
@@ -28,14 +29,16 @@ get_header(); ?>
 
       <?php technoheads_content_nav( 'nav-below' ); ?>
 
-    <?php else : ?>
-
-      <?php get_template_part( 'no-results', 'search' ); ?>
-
-    <?php endif; ?>
-
-    </div><!-- #content .site-content -->
-  </section><!-- #primary .content-area -->
+      <?php else : ?>
+  
+        <?php get_template_part( 'no-results', 'search' ); ?>
+  
+      <?php endif; ?>
+        
+      <?php get_footer(); ?>
+      
+		</div>
+  </div>
+</div>
  
 <?php get_sidebar(); ?>
-<?php get_footer(); ?>

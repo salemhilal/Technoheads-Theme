@@ -23,16 +23,18 @@
 /* #Media Queries
 ================================================== */
 
-  @media only screen and (max-width: 1230px) {
+
+
+ /* @media only screen and (max-width: 1230px) {
     .sidebar-container {
-      display: none;
+      display: none !important;
     }
     .main-container {
-      width: 100%;
-      padding-left: 0;
+      width: 100% !important;
+      padding-left: 0 !important;
     }
 
-  }
+  }*/
 
   /* Smaller than standard 960 (devices and browsers) */
   @media only screen and (max-width: 959px) {  }

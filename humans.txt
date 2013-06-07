@@ -3,13 +3,14 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Salem Hilal - Developer/Designer - @technoheads
 
 # THANKS
 
-    <name>
+    The lovely people at Skeleton make such a nice framework.
 
 # TECHNOLOGY COLOPHON
 
     HTML5, CSS3
     jQuery, Modernizr
+    Skeleton

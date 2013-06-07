@@ -23,6 +23,9 @@ if (!function_exists('technoheads_setup' )):
 
     add_theme_support('automatic-feed-links');
     add_theme_support('post-formats', array('aside'));
+    add_theme_support('post-thumbnails');
+    set_post_thumbnail_size(1400);
+
 
     register_nav_menus( array(
       'primary' => __('Primary Menu', 'technoheads')

@@ -25,7 +25,24 @@ function technoheads_posted_on() {
   );
 }
 endif;
+
  
+if ( ! function_exists( 'technoheads_posted_on_brief' ) ) :
+/**
+ * Prints HTML with meta information for the current post-date/time and author.
+ * @since Technoheads 1.0
+ */
+function technoheads_posted_on_brief() {
+  printf( __( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a>', 'technoheads' ),
+    esc_url( get_permalink() ),
+    esc_attr( get_the_time() ),
+    esc_attr( get_the_date( 'c' ) ),
+    esc_html( get_the_date() )
+  );
+}
+endif;
+
+
 /**
  * Returns true if a blog has more than 1 category
  * @since Technoheads 1.0
@@ -91,7 +108,7 @@ if ( ! function_exists( 'technoheads_content_nav' ) ):
    
     ?>
     <nav role="navigation" id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?>">
-      <h1 class="assistive-text"><?php _e( 'Post navigation', 'technoheads' ); ?></h1>
+      <!-- <h1 class="assistive-text"><?php _e( 'Post navigation', 'technoheads' ); ?></h1> -->
    
     <?php if ( is_single() ) : // navigation links for single posts ?>
    
