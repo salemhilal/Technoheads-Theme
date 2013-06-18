@@ -8,7 +8,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-  <?php if ( is_search() ) : // Only display Excerpts for Search ?>
+  <?php if ( is_search() ) : /* Only display Excerpts for Search*/ ?>
     <div class="entry-summary">
       <?php the_excerpt(); ?>
     </div><!-- .entry-summary -->
@@ -18,10 +18,10 @@
       <?php wp_link_pages(array( 'before' => '<div class="page-links">' . __('Pages:', 'technoheads'), 'after' => '</div>' )); ?>
     </div><!-- .entry-content -->
   <?php endif; ?>
- 
+
   <footer class="entry-meta"><h5>
     <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'technoheads' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark">
-      <?php echo get_the_date(); ?>
+      <h5><?php technoheads_posted_on_brief(); ?></h5>
     </a>
 
     <?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>

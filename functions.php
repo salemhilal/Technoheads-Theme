@@ -71,3 +71,72 @@ function technoheads_widgets_init() {
   ) );
 }
 add_action( 'widgets_init', 'technoheads_widgets_init' );
+
+// Theme options page stuff
+function setup_theme_admin_menus(){
+  add_submenu_page('themes.php', 'Calcium Settings', 'Calcium Settings', 
+          'manage_options', 'calcium-settings', 'theme_calcium_settings');
+
+}
+function theme_calcium_settings(){
+  // Check to see that the current user has the right permissions.
+  if ( !current_user_can( 'manage_options' ) )  {
+    wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
+  }
+?>
+  <div class="wrap">
+    <?php screen_icon('themes'); ?> <h2>Calcium Settings</h2>
+    <form method="POST" action="options.php">
+      <?php settings_fields('calcium_options'); ?>
+      <?php do_settings_sections('calcium'); ?>
+
+      <input name="Submit" type="submit" value="<?php esc_attr_e('Save Changes'); ?>" />
+    </form> 
+  </div>
+<?php
+}
+
+add_action("admin_menu", "setup_theme_admin_menus");
+
+
+// Initializes the calcium settings page
+function calcium_admin_init(){
+	register_setting( 'calcium_options', 'calcium_options', 'calcium_options_validate' );
+	add_settings_section('calcium_main', 'Loop Settings', 'calcium_section_text', 'calcium');
+	add_settings_field('calcium_text_string', 'Hide Posts Before:', 'Calcium_setting_string', 'calcium', 'calcium_main');
+}
+add_action('admin_init', 'calcium_admin_init');
+
+// Calcium section text
+function calcium_section_text() {
+	echo '<p>These settings modify the behavior of the loop.</p>';
+}
+
+// Settings string for calcium
+function calcium_setting_string() {
+	$options = get_option('calcium_options');
+	echo "<input id='calcium_start_date' name='calcium_options[start_date]' size='40' type='text' value='{$options['start_date']}' placeholder='yyyy-mm-dd'/>";
+}
+
+// Checks to see if date is of form yyyy-mm-dd
+function validateDate( $postedDate ) {
+   if (preg_match('/^(\d{4})-(\d{2})-(\d{2})$/', $postedDate, $datebit)) {
+      return checkdate($datebit[2] , $datebit[3] , $datebit[1]);
+   } else {
+      return false;
+   }
+} 
+
+// validates calcium_options
+function calcium_options_validate($input) {
+	$newinput['start_date'] = trim($input['start_date']);
+	if(!validateDate($newinput['start_date'])) {
+		$newinput['start_date'] = '';
+	}
+	return $newinput;
+}
+
+
+
+
+

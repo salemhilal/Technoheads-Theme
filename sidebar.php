@@ -7,8 +7,8 @@
 */
 ?>
 <div id="secondary" class="widget-area sidebar-container" role="complementary">
-
-  <hgroup class="row title-group">
+	<img src="http://farm3.staticflickr.com/2847/9074324292_3ef7c2e087_o.jpg" class="logo-image"></img>
+  <header class="row title-group">
     <h1 class="site-title">
 	    <a href="<?php echo home_url('/'); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display') ); ?>" rel="home">
         <?php bloginfo('name'); ?>
@@ -18,7 +18,7 @@
     <h2 class="site-description subheader">
       <?php bloginfo('description'); ?>
     </h2>
-  </hgroup>
+  </header>
 
   <?php do_action( 'before_sidebar' ); ?>
   <?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
@@ -29,8 +29,8 @@
 
   	<aside id="places" class="widget">
     	<ul>
-        <?php wp_list_pages( array( 'child_of' => 0, 'title_li' => '') ); ?> 
-        <?php wp_list_categories( array( 'number' => 5, 'child_of' => 0, 'title_li' => '') ); ?>
+        <?php wp_list_pages( array( 'title_li' => '') ); ?> 
+        <?php wp_list_categories( array( 'number' => 5, 'title_li' => '') ); ?>
 			</ul> 
     </aside>
   
@@ -49,12 +49,12 @@
 		</aside>
   	-->
 
-    <aside id="archives" class="widget">
+    <!--aside id="archives" class="widget">
       <h1 class="widget-title"><?php _e( 'Archives', 'technoheads' ); ?></h1>
       <ul>
         <?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
       </ul>
-    </aside>
+    </aside-->
  
   <?php endif; // end sidebar widget area ?>
 </div><!--#secondary .widget-area  -->

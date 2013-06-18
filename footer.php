@@ -24,11 +24,20 @@
 <?php wp_footer(); ?>
 
 <!-- Scripts! -->
-<script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
 <script>
-	if(window.location.href.indexOf("center") != -1){
-  	$("#primary").addClass("offset-by-two");
-	}  
+  jQuery(document).ready(function(){
+    // For testing purposes.
+  	jQuery(jQuery("#secondary li").splice(4)).hide();
+    
+  });
+  
+  jQuery(window).load(function(){
+   	// fade in the sidebar after everything's loaded.	
+    jQuery(".sidebar-container").fadeIn(200);
+    
+  });
+  
+      
 </script>
 
 </body>
