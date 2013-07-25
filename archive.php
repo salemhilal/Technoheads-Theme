@@ -10,13 +10,15 @@
  
 get_header(); ?>
  
-<section id="primary" class="content-area">
-<div id="content" class="site-content" role="main">
+<div class="main-container">  
+  <div class="container">
+    <div class="twelve columns offset-by-two">
+
  
 <?php if ( have_posts() ) : ?>
  
-<header class="page-header">
-  <h1 class="page-title">
+<!--header class="page-header">
+  <h1 class="page-title subheader">
     <?php
       if ( is_category() ) {
         printf( __( 'Category Archives: %s', 'technoheads' ), '<span>' . single_cat_title( '', false ) . '</span>' );
@@ -65,7 +67,7 @@ get_header(); ?>
         echo apply_filters( 'tag_archive_meta', '<div class="taxonomy-description">' . $tag_description . '</div>' );
     }
   ?>
-</header><!-- .page-header -->
+</header--><!-- .page-header -->
  
 <?php technoheads_content_nav( 'nav-above' ); ?>
 <?php /* Start the Loop */ ?>
@@ -88,9 +90,9 @@ get_header(); ?>
 <?php get_template_part( 'no-results', 'archive' ); ?>
  
 <?php endif; ?>
- 
-</div><!-- #content .site-content -->
-</section><!-- #primary .content-area -->
+<?php get_footer(); ?>
+</div>
+</div>
+</div>
  
 <?php get_sidebar(); ?>
-<?php get_footer(); ?>

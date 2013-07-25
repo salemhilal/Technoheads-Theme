@@ -18,7 +18,12 @@
 
   <!-- The post's featured image -->
   <?php if (has_post_thumbnail()) { ?>
-    <div class="featured-image"><?php the_post_thumbnail(); ?></div>
+  <?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'thumbnail') ); ?>
+    <div class="featured-image">
+      <a href="<?php echo $url ?>">
+	<?php the_post_thumbnail(); ?>
+      </a>
+    </div>
   <?php } ?>
 
   <?php if ( is_search() ) : /* Only display Excerpts for Search*/ ?>

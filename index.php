@@ -14,6 +14,9 @@ get_header(); ?>
 
       <div id="primary" class="twelve columns offset-by-two">
         <header class="row mobile-title-group">
+          <a href="<?php echo home_url('/'); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display') ); ?>" rel="home">
+            <img src="<?php bloginfo('stylesheet_directory'); ?>/img/logo2.svg" class="logo-image">
+          </a>
           <h1 class="mobile-site-title">
             <a href="<?php echo home_url('/'); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display') ); ?>" rel="home">
               <?php bloginfo('name'); ?>
@@ -56,8 +59,6 @@ get_header(); ?>
             get_template_part('no-results', 'index');
           endif ?>
 
-        <div class="row">
-          <div class="end-icon">&#x2756;</div>
           <?php get_footer(); ?>
         </div>
       </div>

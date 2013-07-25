@@ -22,17 +22,18 @@ html, body{
 }
 
 h1, h2, h3, h4, h5, h6{
-	display: block;
-	clear: both;  
+  display: block;
+  clear: both;  
 }
 
-a{
+a {
   text-decoration: none;
   color: #2D72CC;
 }
 
 a:hover{
   text-decoration: underline;
+  color: #2D72CC;
 }
 
 h1 a{
@@ -49,6 +50,8 @@ h1 a{
   display: inline-block;
   position: relative;
   box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   overflow: auto;
   margin: 0;
   /*TODO: Make the height of this the height of the window.*/
@@ -60,33 +63,36 @@ article.post, article.page {
 }
 
 article p{
-	font-size: 1.2em;  
-  line-height: 1.5em;
+  font-size: 1.2em !important;  
+  line-height: 1.5em !important;
   text-align: justify;
 }
 
-.tag-links a:before {
-    content: "#";
+article li:before {
+  content: "-";
+  padding-right: 10px;
 }
 
-
 footer.entry-meta {
-	display: block;
-	clear: both;
-	text-align: center;
+  display: block;
+  clear: both;
+  text-align: center;
 }
 
 
 
 /* Sidebar
------------------------------------------------ */
+================================================== */
 
 .sidebar-container h1 { font-size: 21px; line-height: 30px; margin-bottom: 4px; }
 .sidebar-container h2 { font-size: 17px; line-height: 24px; }
 .sidebar-container h3 { font-size: 14px; line-height: 21px; }
 
 .sidebar-container {
-	padding: 25px;
+  transition-property: opacity;
+  transition-duration: .5s;
+  opacity: 1;
+  padding: 25px;
   width: 300px;
   height: 100%;
   display: inline-block;
@@ -96,11 +102,14 @@ footer.entry-meta {
   bottom: 0;
   float: left;
   box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   border-right: 3px solid #efefef;
 }
 
 .title-group{
-	text-align: center;  
+  text-align: center;  
+  margin-bottom: 30px;
 }
 
 h1.site-title{
@@ -110,7 +119,10 @@ h1.site-title{
 .sidebar-container, #s{
   font-family: "Georgia", "Times New Roman", serif;
   font-size: 18px;
-  display: none; /* so we can fade it in. */
+}
+
+.sidebar-container{
+  display: none; /* so we can fade it in */
 }
 
 #places a {
@@ -118,20 +130,22 @@ h1.site-title{
 }
 
 #places ul{
-	margin-left: 15px;  
+  margin-left: 15px;  
 }
 
 #s {
-	font-style: italic;
-	padding: 6px 12px;
+  font-style: italic;
+  padding: 6px 12px;
   width: 100%;
-	box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 
 
 
 /* Images
------------------------------------------------ */
+================================================== */
 
 .post img {
     max-width: 100%;
@@ -139,18 +153,18 @@ h1.site-title{
 }
 
 .alignleft, .alignright, .aligncenter, .alignnone{
-	padding-top: 10px;
-	padding-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   display: block;  
 }
 
 .alignleft, .alignnone{
-	float: left;
+  float: left;
   padding-right: 10px;
 }
 
 .alignright{
-	float: right;
+  float: right;
   padding-left: 10px;
 }
 
@@ -172,15 +186,15 @@ h1.site-title{
 
 
 /* Specific Stylings
------------------------------------------------ */
+================================================== */
 
 .sidebar-container li:before, .entry-date, header .entry-meta h5 a{
   color: #2D72CC;
 }
 
 .entry-title{
-	padding-bottom: 20px;
-	padding-top: 35px;
+  padding-bottom: 20px;
+  padding-top: 35px;
 }
 
 .entry-title a, .site-title a, .entry-meta a{
@@ -188,12 +202,12 @@ h1.site-title{
 }
 
 .sidebar-container li a{
-	color: #2D72CC;
+  color: #2D72CC;
 }
 
 .page-links {
-	display: block;
-	clear: both;
+  display: block;
+  clear: both;
 }
 
 
@@ -207,7 +221,7 @@ h1.site-title{
 }
 
 header .entry-meta{
-	margin-bottom: 20px;
+  margin-bottom: 20px;
   margin-left: 5px;
 }
 
@@ -221,7 +235,7 @@ footer.entry-meta h5, footer.entry-meta a{
 }
 
 footer.entry-meta a:hover, .more-link:hover{
- 	color: #2D72CC;   
+  color: #2D72CC;   
 }
 
 .more-link{
@@ -231,7 +245,7 @@ footer.entry-meta a:hover, .more-link:hover{
 }
 
 a:hover, .more-link:hover{
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 .entry-meta{
@@ -239,11 +253,16 @@ a:hover, .more-link:hover{
 }
 
 .entry-header{
-	margin-top: 20px;  
+  margin-top: 20px;  
 }
 
 .mobile-title-group{
   display: none;
+}
+
+.mobile-title-group .logo-image {
+  width: 200px;
+  margin: 0 auto;
 }
 
 .end-icon{
@@ -253,7 +272,7 @@ a:hover, .more-link:hover{
   margin: 50px 0;
 }
 
-/* #Mobile Specific 
+/* Mobile Header  
 ================================================== */
 
 .mobile-title-group {
@@ -262,6 +281,7 @@ a:hover, .more-link:hover{
 .mobile-title-group a {
     text-decoration:  none;
 }
+
 .mobile-title-group h2 {
     font-size: 1.3em;
 }
@@ -271,17 +291,17 @@ a:hover, .more-link:hover{
 }
 
 
-/* #Laptop/Desktop
+/* Media queries
 ================================================== */
 
-/* Min-width of 1260px */
+/* Large displays ( >= FHD) */
 @media only screen and (min-width: 1980px) {
   
   .title-group{
-  	zoom: 1.3 !important;			  
+    zoom: 1.3 !important;       
   }
   
-	.main-container{
+  .main-container{
     padding-left: 400px !important;
   }
   
@@ -292,15 +312,79 @@ a:hover, .more-link:hover{
   
 }
 
+@media only screen and (min-width: 1068px){
+  .mobile-footer {
+    display: none;
+  }
+  .mobile-footer .menu-item {
+    display: inline-block;
+    margin: 0 20px;
+  }
+  .mobile-footer menu {
+    text-align: center;
+  }
+}
+
+/* Smaller displays / tablets */
 @media only screen and (max-width: 1067px) {
-	.sidebar-container{
+
+  .sidebar-container {
     display: none !important;
   }
   .mobile-title-group{
-  	display: block !important; 
+    display: block !important; 
   }
   .main-container{
-   	padding-left: 0; 
+    padding-left: 0; 
+  }
+
+  /* TODO: Ugh, ugly selector. Only slightly better than !important*/
+  div#secondary.sidebar-container {
+    border: none;
+    position: relative;
+    margin: 20px auto;
+  }
+  div#secondary.sidebar-container:before,
+  div#secondary.sidebar-container:after {
+    content: '\0020';
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+  div#secondary.sidebar-container:after {
+    clear: both;
+  }
+
+}
+
+/* Mobile */
+@media only screen and (max-width: 767px){
+  body {
+    font-size: .9em !important;
+  }
+
+  article p {
+    text-align: left;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+}
+
+@media only screen and (max-width: 300px){
+  .mobile-title-group h1 {
+    /*font-size: 38px;*/
+  }
+}
+
+/* Not mobile */
+@media only screen and (min-width: 768px){
+  article p {
+    text-align: justify;
   }
 }
   
@@ -314,21 +398,47 @@ a:hover, .more-link:hover{
   display: block;
   width: 90%;
   height: auto;
-  border-radius: 50%;
   box-sizing: border-box;
-  /*border: 3px solid #777;*/
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   margin: 30px auto;
-  padding: 5px;
+  padding-left: 45px;
+  padding-right: 45px;
+  padding-top: 0;
+  padding-bottom: 15px;
 }  
   
+.widget {
+  padding: 0 15px;
+}
   
+.container {
+  overflow: hidden;
+}  
   
+.current-menu-item a{
+  pointer-events: none;
+  cursor: default;
+  color: #333 !important;
+}
+.current-menu-item:before{
+  content: "-";
+  color: #333 !important;
+  width: 15px;
+  display: inline-block;
+  margin-left: -15px;
+  font-weight: bold;
+}
   
-  
-  
-  
-  
-  
-  
-  
+.sidebar-container.faded {
+  transition-property: opacity;
+  transition-duration: .5s;
+  opacity: .15;
+}
+
+.sidebar-container.faded:hover {
+  transition-property: opacity;
+  transition-duration: .2s;
+  opacity: 1;
+}
   

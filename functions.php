@@ -1,7 +1,7 @@
 <?php
 /**
  * Theme functions and definitions
- * 
+ *
  * @package Technoheads
  * @since Technoheads 0.0.1
  */
@@ -10,7 +10,7 @@
  * Set the content width based on the theme's design and stylesheet.
  * @since Technoheads 0.0.1
  */
-if (!isset($content_width)) 
+if (!isset($content_width))
   $content_width = 654; /* pixels */
 
 if (!function_exists('technoheads_setup' )):
@@ -42,11 +42,6 @@ function shape_scripts(){
     wp_enqueue_script('comment-reply');
   }
 
-  wp_enqueue_script('small-menu', get_template_directory_uri() . '/js/small-menu.js', array('jquery'), '20120206', true);
-
-  if(is_singular() && wp_attachment_is_image()){
-    wp_enqueue_script('keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array('jquery'), '20120202');
-  }
 }
 add_action('wp_enqueue_scripts', 'shape_scripts');
 
@@ -60,7 +55,7 @@ function technoheads_widgets_init() {
     'before_title' => '<h1 class="widget-title">',
     'after_title' => '</h1>',
   ) );
- 
+
   register_sidebar( array(
     'name' => __( 'Secondary Widget Area', 'technoheads' ),
     'id' => 'sidebar-2',
@@ -74,7 +69,7 @@ add_action( 'widgets_init', 'technoheads_widgets_init' );
 
 // Theme options page stuff
 function setup_theme_admin_menus(){
-  add_submenu_page('themes.php', 'Calcium Settings', 'Calcium Settings', 
+  add_submenu_page('themes.php', 'Calcium Settings', 'Calcium Settings',
           'manage_options', 'calcium-settings', 'theme_calcium_settings');
 
 }
@@ -91,7 +86,7 @@ function theme_calcium_settings(){
       <?php do_settings_sections('calcium'); ?>
 
       <input name="Submit" type="submit" value="<?php esc_attr_e('Save Changes'); ?>" />
-    </form> 
+    </form>
   </div>
 <?php
 }
@@ -125,7 +120,7 @@ function validateDate( $postedDate ) {
    } else {
       return false;
    }
-} 
+}
 
 // validates calcium_options
 function calcium_options_validate($input) {
@@ -136,7 +131,16 @@ function calcium_options_validate($input) {
 	return $newinput;
 }
 
-
+// THIS INCLUDES THE THUMBNAIL IN OUR RSS FEED
+function insertThumbnailRSS($content) {
+  global $post;
+  if ( has_post_thumbnail( $post->ID ) ){
+    $content = '' . get_the_post_thumbnail( $post->ID, 'thumbnail', array( 'alt' => get_the_title(), 'title' => get_the_title(), 'style' => 'float:right;' ) ) . '' . $content;
+  }
+  return $content;
+}
+add_filter('the_excerpt_rss', 'insertThumbnailRSS');
+add_filter('the_content_feed', 'insertThumbnailRSS');
 
 
 

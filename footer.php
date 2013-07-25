@@ -9,6 +9,29 @@
 */
 ?>
 
+<div class="row mobile-footer">
+    <?php do_action( 'before_sidebar' ); ?>
+    <?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
+
+      <aside id="search" class="widget widget_search">
+        <?php get_search_form(); ?>
+      </aside>
+
+      <aside id="places" class="widget">
+        <ul>
+          <?php wp_list_pages( array( 'title_li' => '') ); ?>
+          <?php wp_list_categories( array( 'number' => 5, 'title_li' => '') ); ?>
+        </ul>
+      </aside>
+
+    <?php endif; // end sidebar widget area ?>
+</div>
+
+<div class="row">
+  <div class="end-icon">&#x2756;</div>
+</div>
+
+<div class="row">
 
 <footer id="colophon" class="site-footer" role="contentinfo">
   <div class="site-info">
@@ -24,21 +47,7 @@
 <?php wp_footer(); ?>
 
 <!-- Scripts! -->
-<script>
-  jQuery(document).ready(function(){
-    // For testing purposes.
-  	jQuery(jQuery("#secondary li").splice(4)).hide();
-    
-  });
-  
-  jQuery(window).load(function(){
-   	// fade in the sidebar after everything's loaded.	
-    jQuery(".sidebar-container").fadeIn(200);
-    
-  });
-  
-      
-</script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/app.js"></script>
 
 </body>
 </html>
